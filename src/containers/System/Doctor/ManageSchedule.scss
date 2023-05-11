@@ -1,0 +1,18 @@
+.manage-schedule-container{
+    .m-s-title{
+        text-transform: uppercase;
+        margin-top: 15px;
+    }
+    .pick-hour-container{
+        padding: 20px 0;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap ;
+        .btn-schedule{
+            
+        }
+    }
+    .btn-save-schedule{
+        margin-top: 20px;
+    }
+}

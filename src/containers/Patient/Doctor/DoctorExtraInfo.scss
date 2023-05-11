@@ -1,0 +1,83 @@
+.doctor-extra-info-container{
+    padding-left: 15px;
+    .content-up{
+        margin-bottom: 10px;
+        .text-address{
+            text-transform: uppercase;
+            color: #7b7979;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .name-clinic{
+            color: #333;
+            font-weight: 600;
+            padding: 3px 0;
+        }
+        .detail-address{
+            color: #333;
+            font-weight: 600;
+            padding: 3px 0;
+        }
+    }
+    .content-down{
+        .short-info{
+            span{
+                cursor: pointer;
+                color: rgb(16, 153, 207);
+                padding-left: 4px;
+            }
+            .currency{
+                margin: 0 0 0 5px ;
+                color: #333;
+                cursor: context-menu;
+            }
+        }
+        .title-price{
+            margin: 0 0 6px 0 ;
+            text-transform: uppercase;
+        }
+        .detail-info{
+            background-color: #f9f9f9;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            border:2px solid #bdbbbb;
+            padding: 10px 8px;
+            .price{
+                display: flex;
+                justify-content: space-between;
+                font-weight: 500;
+                font-size: 16px;
+                padding: 2px ;
+                .right{
+
+                }
+                .left{
+        
+                }
+            }
+            .note{
+
+            }
+        }
+        .payment{
+            background-color: #f1ebeb;
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+            border-left:2px solid #bdbbbb;
+            border-right:2px solid #bdbbbb;
+            border-bottom:2px solid #bdbbbb;
+            padding: 10px 8px;
+            margin: 0 0 6px 0 ;
+            span{
+                padding-left: 2px;
+            }
+        }
+        .hide-price{
+            
+            span{
+                cursor: pointer;
+                color: rgb(16, 153, 207);
+            }
+        }
+    }
+}

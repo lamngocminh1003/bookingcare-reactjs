@@ -1,0 +1,164 @@
+.slick-prev{
+    left: -30px !important;
+    z-index: 4 !important;
+    height: 48px !important;
+    width: 44px !important;
+    background: #fff !important;
+    border: 2px solid #e4e0e0 !important;
+    border-radius: 2px;
+    &:hover{
+        background: #ece6e6 !important;
+    }
+}
+.slick-next{
+    right:  -30px !important;
+    z-index: 4 !important;
+    height: 48px !important;
+    width: 44px !important;
+    background: #fff !important;
+    border: 2px solid #e4e0e0 !important;
+    border-radius: 2px;
+
+    &:hover{
+        background: #ece6e6  !important;
+    }
+}
+.slick-disabled{
+    display: none !important;
+}
+.slick-next:before,.slick-prev:before{
+    font-family: FontAwesome !important;
+    color: rgb(30, 30, 183) !important;
+}
+
+.section-share {
+    &.section-specialty{
+        background-color: #f5f5f5;
+    }
+    &.section-outstanding-doctor{
+        background-color: #f5f5f5;
+    }
+    &.section-about{
+        height: 500px !important;
+        border-top:4px solid #f5f5f5;
+        border-bottom:4px solid #f5f5f5;
+    }
+    .section-body{
+        .section-customize{
+            .bg-image{
+                height: 150px;
+                width: 278px;
+                background-position: center center;
+                background-repeat: no-repeat !important;
+                background-size: cover;
+                background-color: #eee;
+                &.section-specialty{
+                    background-image: url('../../assets/specialty/co-xuong-khop.jpg');
+                    margin: 0 auto;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                }
+                &.section-medical-facility{
+                    background-image: url('../../assets/medical-facility/thucuc.png');
+                    margin: 0 auto;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                }
+                &.section-outstanding-doctor{
+                    // background-image: url('../../assets/outstanding-doctor/anh-dai-dien-bs.jpg');
+                    width: 120px;
+                    height: 120px;
+                    margin: 0 auto;
+                    margin-bottom: 10px;
+                    border-radius: 50%;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    cursor: pointer;
+                }
+                &.section-handbook{
+                    background-image: url('../../assets/handbook/kham-mat-q7.jpg');
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+.section-share{
+    height: 330px;
+    .section-container{
+        margin: 0 105px;
+        .section-header{
+            display: flex;
+            height: 60px;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            margin: 20px 0;
+            .title-section{
+                font-size: 22px;
+                font-weight: 600;
+            }
+            .btn-section{
+                padding: 10px 15px;
+                border: none;
+                border-radius: 2px;
+                outline: none;
+                background: #ebebeb;
+                color: black;
+                text-transform: uppercase;
+                &:hover{
+                    color: #fff;
+                    background: #f7d800;
+                }
+            }
+        }
+    }
+}
+.section-outstanding-doctor{
+    .outer-bg{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .section-customize{
+        padding: 5px;
+        .customize-border{
+            border: 1px solid orange;
+            padding: 5px;
+            cursor: pointer;
+        }
+    }
+}
+
+.home-footer{
+    text-align: center;
+    padding-top: 8px;
+    a{
+        text-decoration: none;
+        color: black;
+    }
+}
+.section-about{
+    padding: 0 100px;
+    .section-about-header{
+        padding: 20px 10px;
+        font-size: 22px;
+        font-weight: 600;
+    }
+    .section-about-content{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        .content-left{
+            width: 60%;
+        }
+        .content-right{
+            width: 40%;
+            font-style: italic;
+            text-align: justify;
+        }
+    }
+}

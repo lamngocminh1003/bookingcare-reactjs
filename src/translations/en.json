@@ -51,7 +51,7 @@
         "position":"Position",
         "roleId":"Role",
         "image":"Avatar",
-        "upload-avt":"Upload avatar ",
+        "upload-avt":"Upload image ",
         "save":"Save user",
         "edit":"Save changes"
     },

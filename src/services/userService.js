@@ -6,20 +6,32 @@ const handleLoginApi =(userEmail,userPassword)=>{
 const getAllUsers =(inputId)=>{
     return axios.get(`/api/get-all-users?id=${inputId}`)
 }
+const getAllSpecialties = () =>{
+    return axios.get(`/api/get-all-specialties`)
+}
 const createNewUserService =(data) =>{
     console.log('check data from server: ', data);
     return axios.post(`/api/create-new-user`,data)
 }
 const deleteUserService =(userId) =>{
-    // return axios.delete(`/api/delete-user`,{id: userId})
     return axios.delete(`/api/delete-user`, {
         data: {
           id: userId
         }
       });
 }
+const deleteSpecialtyService =(specialtyId) =>{
+    return axios.delete(`/api/delete-specialty`, {
+        data: {
+          id: specialtyId
+        }
+      });
+}
 const editUserService = (inputData) =>{
     return axios.put(`/api/edit-user`, inputData);
+}
+const editSpecialtyService = (inputData) =>{
+    return axios.put(`/api/edit-specialty`, inputData);
 }
 const getAllCodeService = (inputType) =>{
     return axios.get(`/api/allcode?type=${inputType}`)
@@ -77,5 +89,8 @@ export{handleLoginApi,
     getProfileDoctorById,
     postPatientBookingAppointment,
     postVerifyBookingAppointment,
-    createNewSpecialty
+    createNewSpecialty,
+    getAllSpecialties,
+    deleteSpecialtyService,
+    editSpecialtyService
 }

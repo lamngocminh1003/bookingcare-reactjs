@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { FormattedMessage } from 'react-intl';
-import {LANGUAGES,CommonUtils} from "../../../utils";
+import {LANGUAGES,CommonUtils,CRUD_ACTIONS} from "../../../utils";
 import './ManageSpecialty.scss';
 import MarkdownIt from 'markdown-it';
+import * as actions from "../../../store/actions";
 import MdEditor from 'react-markdown-editor-lite';
 import 'react-markdown-editor-lite/lib/index.css';
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import {createNewSpecialty} from '../../../services/userService'
 import { toast } from "react-toastify";
-
+import TableManageSpecialty from './TableManageSpecialty';
 const mdParser = new MarkdownIt(/* Markdown-it options */);
 class ManageSpecialty extends Component {
     constructor(props){
@@ -22,6 +23,8 @@ class ManageSpecialty extends Component {
             descriptionMarkdown:'',
             previewImgURL:'',
             isOpen: false,
+            action:'',
+            specialtyEditId:''
         }
     }
     async componentDidMount(){
@@ -31,6 +34,16 @@ class ManageSpecialty extends Component {
     async componentDidUpdate(prevProps, prevState,  snapshot){
         if(this.props.language !== prevProps.language){
 
+        }
+        if(prevProps.listSpecialties !== this.props.listSpecialties){
+            this.setState({
+                name:'',
+                imageBase64:'',
+                descriptionHTML:'',
+                descriptionMarkdown:'',
+                previewImgURL:'',
+                action:CRUD_ACTIONS.CREATE
+            })
         }
     }
     handleOnChangeInput =(event,id)=>{
@@ -66,15 +79,43 @@ class ManageSpecialty extends Component {
       }
 
     handleSaveSpecialty = async() =>{
-        let res = await createNewSpecialty(this.state)
-        if(res && res.errCode ===0){
-            toast.success("Add new specialty successfully!");
-        }else{
-            toast.error("Add new specialty error!");
-            console.log('check error',res);
+        let {action} = this.state
+        if(action === CRUD_ACTIONS.CREATE){
+            let res = await createNewSpecialty(this.state)
+            if(res && res.errCode ===0){
+                toast.success("Add new specialty successfully!");
+            }else{
+                toast.error("Add new specialty error!");
+                console.log('check error',res);
+            }
+        }
+        if(action === CRUD_ACTIONS.EDIT){
+            this.props.editSpecialtyRedux({
+                id:this.state.specialtyEditId,
+                name: this.state.name,
+                descriptionHTML : this.state.descriptionHTML,
+                descriptionMarkdown : this.state.descriptionMarkdown,
+                image: this.state.imageBase64,
+            })
         }
         console.log('check state: ', this.state);
+        this.props.fetchSpecialtiesRedux()
     }
+    handleEditSpecialtyFromParentKey = (specialty) => {
+        let imageBase ='';
+        if(specialty.image){
+          imageBase = new Buffer(specialty.image,'base64').toString('binary');
+        }
+        this.setState({
+            name:specialty.name,
+            imageBase64:'',
+            descriptionHTML:specialty.descriptionHTML,
+            descriptionMarkdown:specialty.descriptionMarkdown,
+            previewImgURL: imageBase,
+            action: CRUD_ACTIONS.EDIT,
+            specialtyEditId: specialty.id
+        })
+      }
     render() {
 
         return (
@@ -119,13 +160,22 @@ class ManageSpecialty extends Component {
                             />
                     </div >
                     <div className='col-12'>
-                        <button 
-                        className='btn btn-primary btn-saveSpecialty'
-                        onClick={()=>this.handleSaveSpecialty()}>
-                            Save
-                        </button>
+                    <button
+                        className= {this.state.action === CRUD_ACTIONS.EDIT ? "btn btn-warning btn-saveSpecialty" : "btn btn-primary btn-saveSpecialty" } 
+                        onClick={() => this.handleSaveSpecialty()}
+                        >
+                        {this.state.action === CRUD_ACTIONS.EDIT ?
+                        <FormattedMessage id="manage-user.edit" /> 
+                        :
+                        <FormattedMessage id="manage-user.save" /> 
+                        }
+                    </button> 
                     </div>
                 </div>
+                <TableManageSpecialty
+                handleEditSpecialtyFromParentKey={this.handleEditSpecialtyFromParentKey}
+                action = {this.state.action}
+                />
                     {this.state.isOpen === true && (
                         <Lightbox
                             mainSrc={this.state.previewImgURL}
@@ -140,11 +190,14 @@ class ManageSpecialty extends Component {
 const mapStateToProps = state => {
     return {
         language: state.app.language,
+        listSpecialties: state.admin.specialties
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
+        fetchSpecialtiesRedux: ()=> dispatch(actions.fetchAllSpecialtiesStart()),
+        editSpecialtyRedux: (data) => dispatch(actions.editSpecialty(data)),
     };
 };
 

@@ -98,6 +98,15 @@ class BookingModal extends Component {
         }
         return ''
     }
+    buildDoctorName=(dataTime) =>{
+        let {language} = this.props
+        if(dataTime && !_.isEmpty(dataTime)){
+            let name = language === LANGUAGES.VI ? `${dataTime.doctorData.lastName} ${dataTime.doctorData.firstName}` 
+            : `${dataTime.doctorData.firstName} ${dataTime.doctorData.lastName}`
+            return name
+        }
+        return ''
+    }
     handleConfirmBooking=async()=>{
         let {fullName , phoneNumber , email,address,reason,birthday,selectedGender} = this.state
 
@@ -129,6 +138,7 @@ class BookingModal extends Component {
             toast.error("Invalid birthday!");
             return;
         }
+        let doctorName = this.buildDoctorName(this.props.dataTime)
         let date = new Date(this.state.birthday).getTime();
         let timeString = this.buildTimeBooking(this.props.dataTime)
         let res = await postPatientBookingAppointment({
@@ -142,7 +152,8 @@ class BookingModal extends Component {
             selectedGender: this.state.selectedGender.value,
             timeType: this.state.timeType,
             language: this.props.language,
-            timeString: timeString
+            timeString: timeString,
+            doctorName:doctorName
         })
         if(res && res.errCode === 0 ) {
             toast.success("Booking an appointment successfully");

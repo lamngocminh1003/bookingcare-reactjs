@@ -1,0 +1,28 @@
+.body {
+    background-color: #95c2de;
+    .mainbox {
+      background-color: #95c2de;
+      display: flex;
+      flex-direction: column;
+      margin:auto;
+      align-items: center;
+      justify-content: center;
+      margin-top: 150px;
+      gap: 20px;
+      .fas {
+        font-size: 15.5rem;
+        color: #ffffff;
+      }
+       .msg {
+           font-family: 'Nunito Sans', sans-serif;
+           font-size: 1.6rem;
+         }
+    }
+}
+  
+  
+  
+  
+  
+  
+  

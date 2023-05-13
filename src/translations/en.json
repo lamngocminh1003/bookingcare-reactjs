@@ -113,7 +113,9 @@
             "select-province":"Province",
             "nameClinic":"Clinic's name",
             "addressClinic":"Clinic's address",
-            "note":"Note"
+            "note":"Note",
+            "select-specialties":"Choose specialty",
+            "select-clinics":"Choose clinic"
         },
         "manage-specialty":{
             "title-add":"Create more information's specialty",

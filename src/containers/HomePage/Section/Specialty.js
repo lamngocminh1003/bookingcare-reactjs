@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import Slider from "react-slick";
-import {getAllSpecialties} from '../../../services/userService'
+import {getAllSpecialties} from '../../../services/userService';
+import { withRouter } from 'react-router';
+
 class Specialty extends Component {
     constructor(props){
         super(props);
@@ -16,6 +18,11 @@ class Specialty extends Component {
             this.setState({
                 dataSpecialty:res.specialties ? res.specialties:[]
             })
+        }
+    }
+    handleViewDetailSpecialty = (item) =>{
+        if(this.props.history){
+            this.props.history.push(`/detail-specialty/${item.id}`)
         }
     }
     render() {
@@ -35,11 +42,18 @@ class Specialty extends Component {
                         <Slider {...this.props.settings}>
                             {dataSpecialty && dataSpecialty.length>0 &&
                             dataSpecialty.map((item, index)=>{
+                                let imageBase64 ='';
+                                    if(item.image){
+                                        imageBase64 = new Buffer(item.image,'base64').toString('binary');
+                                    }
                                 return(
-                                <div className='section-customize specialty-child' key={index}>
+                                <div 
+                                onClick={()=>this.handleViewDetailSpecialty(item)}
+                                className='section-customize specialty-child' 
+                                key={index}>
                                         <div className='bg-image section-specialty '
                                         style={{
-                                            backgroundImage: `url(${item.image})`,
+                                            backgroundImage: `url(${imageBase64})`,
                                           }}
                                         />
                                         <div className='text-center specialty-name'>{item.name}</div>
@@ -68,4 +82,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Specialty));

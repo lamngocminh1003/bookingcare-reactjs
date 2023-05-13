@@ -299,13 +299,17 @@ export const getRequireDoctorInfo= () => {
             let resPrice = await getAllCodeService('PRICE');
             let resPayment = await getAllCodeService('PAYMENT');
             let resProvince = await getAllCodeService('PROVINCE');
+            let resSpecialty = await getAllSpecialties();
+            // let resClinic = await getAllCodeService('PROVINCE');
             if(resPrice && resPrice.errCode === 0 
                 && resPayment && resPayment.errCode === 0 
-                && resProvince && resProvince.errCode === 0){
+                && resProvince && resProvince.errCode === 0
+                && resSpecialty && resSpecialty.errCode === 0){
                     let data={
                         resPrice:resPrice.data,
                         resPayment:resPayment.data,
                         resProvince:resProvince.data,
+                        resSpecialty:resSpecialty.specialties,
                     }
                 dispatch(fetchRequireDoctorInfoSuccess(data))
             }else{
@@ -332,7 +336,7 @@ export const fetchAllSpecialtiesStart = () => {
         try {
             let res = await getAllSpecialties() ;
             if(res && res.errCode === 0){
-                dispatch(fetchAllSpecialtiesSuccess(res.data.reverse()))
+                dispatch(fetchAllSpecialtiesSuccess(res.specialties.reverse()))
             }else{
                 dispatch(fetchAllSpecialtiesFailed());
             }
@@ -342,9 +346,9 @@ export const fetchAllSpecialtiesStart = () => {
     }
 }
 
-export const fetchAllSpecialtiesSuccess = (data) => ({
+export const fetchAllSpecialtiesSuccess = (specialties) => ({
     type: actionTypes.FETCH_ALL_SPECIALTIES_SUCCESS,
-    specialties:data
+    specialties:specialties
 })
 
 export const fetchAllSpecialtiesFailed = () => ({
@@ -379,11 +383,11 @@ export const deleteSpecialtyFailed =()=>({
     type: actionTypes.DELETE_SPECIALTY_FAILED
 })
 
-export const editSpecialty = (data) => {
+export const editSpecialty = (specialties) => {
     return async(dispatch,getState)=>{
 
         try {
-            let res = await editSpecialtyService(data) ;
+            let res = await editSpecialtyService(specialties) ;
             toast.success("Update the specialty successfully!");
             if(res && res.errCode === 0){
                 dispatch(editSpecialtySuccess())

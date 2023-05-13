@@ -203,7 +203,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchSpecialtiesRedux: ()=> dispatch(actions.fetchAllSpecialtiesStart()),
-        editSpecialtyRedux: (data) => dispatch(actions.editSpecialty(data)),
+        editSpecialtyRedux: (specialties) => dispatch(actions.editSpecialty(specialties)),
     };
 };
 

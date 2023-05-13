@@ -114,7 +114,9 @@
             "select-province":"Tỉnh thành",
             "nameClinic":"Tên phòng khám",
             "addressClinic":"Địa chỉ phòng khám",
-            "note":"Ghi chú"
+            "note":"Ghi chú",
+            "select-specialties":"Chọn chuyên khoa",
+            "select-clinics":"Chọn phòng khám"
         },
         "manage-specialty":{
             "title-add":"Tạo thêm thông tin chuyên khoa",

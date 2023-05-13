@@ -53,10 +53,9 @@
                 background-size: cover;
                 background-color: #eee;
                 &.section-specialty{
-                    background-image: url('../../assets/specialty/co-xuong-khop.jpg');
+                    // background-image: url('../../assets/specialty/co-xuong-khop.jpg');
                     margin: 0 auto;
                     margin-bottom: 10px;
-                    cursor: pointer;
                 }
                 &.section-medical-facility{
                     background-image: url('../../assets/medical-facility/thucuc.png');
@@ -84,7 +83,15 @@
         }
     }
 }
-
+.specialty-child{
+    cursor: pointer;
+    .specialty-name{
+        padding: 10px 0;
+        &:hover{
+            color: cornflowerblue;
+        }
+    }
+}
 
 .section-share{
     height: 330px;

@@ -120,10 +120,16 @@ class ManageSpecialty extends Component {
 
         return (
             <div className='manage-specialty-container'>
-                <div className='title'>Quản lý chuyên khoa</div>
+                <div className= {this.state.action === CRUD_ACTIONS.EDIT ? "title" : "title" } 
+                        >
+                        {this.state.action === CRUD_ACTIONS.EDIT ?
+                        <FormattedMessage id="admin.manage-specialty.title-update" /> 
+                        :
+                        <FormattedMessage id="admin.manage-specialty.title-add" /> 
+                        }</div>
                 <div className='add-new-specialty row'>
                     <div className='col-6 form-group'>
-                        <label>Tên chuyên khoa</label>
+                        <label><FormattedMessage id="admin.manage-specialty.name" /> </label>
                         <input 
                         className='form-control' 
                         type='text'
@@ -131,7 +137,7 @@ class ManageSpecialty extends Component {
                         onChange={(event)=>this.handleOnChangeInput(event,'name')}/>
                     </div>
                     <div className='col-6 form-group'>
-                        <label>Ảnh chuyên khoa</label>
+                        <label><FormattedMessage id="admin.manage-specialty.image" /> </label>
                         <div className='preview-img-specialty-container'>
                             <input
                             id="previewImg" 
@@ -165,9 +171,9 @@ class ManageSpecialty extends Component {
                         onClick={() => this.handleSaveSpecialty()}
                         >
                         {this.state.action === CRUD_ACTIONS.EDIT ?
-                        <FormattedMessage id="manage-user.edit" /> 
+                        <FormattedMessage id="admin.manage-specialty.btn-update" /> 
                         :
-                        <FormattedMessage id="manage-user.save" /> 
+                        <FormattedMessage id="admin.manage-specialty.btn-add" /> 
                         }
                     </button> 
                     </div>

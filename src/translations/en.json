@@ -57,7 +57,9 @@
     },
     "homepage": {
         "outstanding-doctor":"Last week's featured doctor",
-        "search":"Searching"
+        "search":"Searching",
+        "specialty-popular":"Popular specialties",
+        "more-info":"View more info"
     },
     "manage-schedule": {
         "title":"Manage doctor's examination plan",
@@ -100,17 +102,27 @@
     },
     "admin":{
         "manage-doctor":{
-            "title":"Create more information's doctor",
+            "title-add":"Create more information's doctor",
+            "title-update":"Update information's doctor",
             "select-doctor":"Choose doctor",
             "intro":"Introduction",
             "save":"Save changes",
-            "add":"Create information",
+            "add":"Save information",
             "select-price":"Price",
             "select-payment":"Payment method",
             "select-province":"Province",
             "nameClinic":"Clinic's name",
             "addressClinic":"Clinic's address",
             "note":"Note"
+        },
+        "manage-specialty":{
+            "title-add":"Create more information's specialty",
+            "title-update":"Update information's specialty",
+            "name":"Specialty",
+            "image":"Specialty's image",
+            "btn-update":"Save changes",
+            "btn-add":"Save information",
+            "specialty":"Specialty"
         }
     }
 }

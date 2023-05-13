@@ -4,23 +4,6 @@ import * as actions from "../../../store/actions";
 import { connect } from 'react-redux';
 import './TableManageUser.scss';
 
-import MarkdownIt from 'markdown-it';
-import MdEditor from 'react-markdown-editor-lite';
-// import style manually
-import 'react-markdown-editor-lite/lib/index.css';
-
-// Register plugins if required
-// MdEditor.use(YOUR_PLUGINS_HERE);
-
-// Initialize a markdown parser
-const mdParser = new MarkdownIt(/* Markdown-it options */);
-
-// Finish!
-function handleEditorChange({ html, text }) {
-  console.log('handleEditorChange', html, text);
-}
-
-
 class TableManageUser extends Component {
 
     constructor(props){
@@ -54,11 +37,11 @@ class TableManageUser extends Component {
                 <table id="TableManageUser">
                 <tbody>
                     <tr>
-                        <th>Email</th>
-                        <th>First name</th>
-                        <th>Last name</th>
-                        <th>Address</th>
-                        <th>Action</th>
+                        <th><FormattedMessage id="manage-user.email" /></th>
+                        <th><FormattedMessage id="manage-user.firstName" /></th>
+                        <th><FormattedMessage id="manage-user.lastName" /></th>
+                        <th><FormattedMessage id="manage-user.address" /></th>
+                        <th> </th>
                     </tr>
                     {arrUsers && arrUsers.length >0 &&
                     arrUsers.map((item, index) =>{
@@ -68,7 +51,7 @@ class TableManageUser extends Component {
                                 <td>{item.firstName}</td>
                                 <td>{item.lastName}</td>
                                 <td>{item.address}</td>
-                                <td>
+                                <td className='action'>
                                     <button
                                     onClick={() =>this.handleEditUser(item)} 
                                     className='btn-edit' ><i className="fas fa-pencil-alt"></i></button>
@@ -82,7 +65,6 @@ class TableManageUser extends Component {
                     }
                     </tbody>
                 </table>
-                <MdEditor style={{ height: '500px' }} renderHTML={text => mdParser.render(text)} onChange={handleEditorChange} />
             </React.Fragment>
         );   
     }

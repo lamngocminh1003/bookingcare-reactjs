@@ -21,30 +21,33 @@
   background-color: #6185d9;
   color: white;
 }
-.btn-edit{
-    width: 30px;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: rgb(228, 172, 32);
-
-    &:hover{
-        background-color: transparent !important;
-        color: rgb(228, 172, 32) !important;
-    }
-}
-
-.btn-delete{
-    width: 30px;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: rgb(255, 80, 86);
-
-    &:hover{
-        background-color: transparent !important;
-        color: rgb(255, 80, 86) !important;
-    }
+.action{
+  width: 80px;
+  .btn-edit{
+      width: 30px;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: rgb(228, 172, 32);
+  
+      &:hover{
+          background-color: transparent !important;
+          color: rgb(228, 172, 32) !important;
+      }
+  }
+  
+  .btn-delete{
+      width: 30px;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: rgb(255, 80, 86);
+  
+      &:hover{
+          background-color: transparent !important;
+          color: rgb(255, 80, 86) !important;
+      }
+  }
 }
 .modal-user-container{
   .modal-content{

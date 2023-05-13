@@ -57,7 +57,10 @@
     },
     "homepage": {
         "outstanding-doctor":"Bác sĩ nổi bậc tuần qua",
-        "search":"Tìm kiếm"
+        "search":"Tìm kiếm",
+        "specialty-popular":"Chuyên khoa phổ biến",
+        "more-info":"Xem thêm"
+
     },
     "manage-schedule": {
         "title":"Quản lý kế hoạch khám bệnh của bác sĩ",
@@ -100,17 +103,27 @@
     },
     "admin":{
         "manage-doctor":{
-            "title":"Tạo thêm thông tin bác sĩ",
+            "title-add":"Tạo thêm thông tin bác sĩ",
+            "title-update":"Cập nhật thông tin bác sĩ",
             "select-doctor":"Chọn bác sĩ",
             "intro":"Thông tin giới thiệu",
             "save":"Lưu thông tin",
             "add":"Tạo thông tin",
-            "select-price":"Giákhám bệnh",
+            "select-price":"Giá khám bệnh",
             "select-payment":"Phương thức thanh toán",
             "select-province":"Tỉnh thành",
             "nameClinic":"Tên phòng khám",
             "addressClinic":"Địa chỉ phòng khám",
             "note":"Ghi chú"
+        },
+        "manage-specialty":{
+            "title-add":"Tạo thêm thông tin chuyên khoa",
+            "title-update":"Cập nhật thông tin chuyên khoa",
+            "name":"Tên chuyên khoa",
+            "image":"Ảnh chuyên khoa",
+            "btn-update":"Lưu thay đổi",
+            "btn-add":"Lưu thông tin",
+            "specialty":"Chuyên khoa"
         }
     }
 }

@@ -93,7 +93,6 @@ class ManageDoctor extends Component {
             addressClinic:this.state.addressClinic,
             note:this.state.note
         })
-        console.log('check state: ',this.state);
     }
 
     handleChangeSelect = async (selectedOption) => {
@@ -222,8 +221,11 @@ class ManageDoctor extends Component {
         let {hasOldData} = this.state;
         return (
             <div className='manage-doctor-container'>
-                <div className='manage-doctor-title title'>
-                    <FormattedMessage id="admin.manage-doctor.title"/>
+                <div className={hasOldData === true ? "manage-doctor-title title" :  ' manage-doctor-title title'}>
+                        {hasOldData === true ? 
+                        <span><FormattedMessage id="admin.manage-doctor.title-update"/></span>:
+                        <span><FormattedMessage id="admin.manage-doctor.title-add"/></span>
+                    } 
                 </div>
                 <div className='more-info'>
                     <div className='content-left'>

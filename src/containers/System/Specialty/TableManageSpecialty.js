@@ -38,15 +38,15 @@ class TableManageSpecialty extends Component {
                 <table id="TableManageSpecialty">
                 <tbody>
                     <tr>
-                        <th>Chuyên nghành</th>
-                        <th>Action</th>
+                        <th><FormattedMessage id="admin.manage-specialty.specialty" /> </th>
+                        <th> </th>
                     </tr>
                     {arrSpecialties && arrSpecialties.length >0 &&
                     arrSpecialties.map((item, index) =>{
                         return(
                             <tr key={index}>
                                 <td>{item.name}</td>
-                                <td>
+                                <td className='action'>
                                     <button
                                     onClick={() =>this.handleEditSpecialty(item)} 
                                     className='btn-edit' ><i className="fas fa-pencil-alt"></i></button>

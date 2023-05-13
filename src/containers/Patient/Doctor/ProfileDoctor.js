@@ -102,7 +102,7 @@ class ProfileDoctor extends Component {
                     </div>
                 </div>
                 <div className='price'>
-                    <input type="radio" checked="checked" id="html" name="fav_language" value="HTML"/>
+                    <span className='far'><i className="far fa-dot-circle fav_language"></i></span>
                     <span>
                     <FormattedMessage id='patient.profile-doctor.price'/>
                                 {dataProfile && dataProfile.Doctor_Info && language === LANGUAGES.VI

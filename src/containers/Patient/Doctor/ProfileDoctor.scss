@@ -26,16 +26,18 @@
     }
     .price{
         border: 1px solid #ccc;
-        width: fit-content;
+        width: 250px;
         margin: 0px 0px 5px 90px ;
         display: flex;
         align-items: center;
         padding: 5px 5px;
         justify-content: center;
-        gap: 2px;
         border-radius: 2px;
+        gap: 10px;
+        .far{
+            font-weight: 600;
+        }
         span{
-            min-width: 50px;
             padding : 0px 5px;
             text-transform: capitalize;
             font-size: 14px;

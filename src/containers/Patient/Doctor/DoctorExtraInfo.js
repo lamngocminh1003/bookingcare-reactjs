@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import './DoctorExtraInfo.scss';
-import Select from 'react-select';
 import { FormattedMessage } from 'react-intl';
 import {LANGUAGES} from "../../../utils";
 import  NumericFormat  from 'react-number-format';

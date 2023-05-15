@@ -28,21 +28,30 @@
         border: 1px solid #ccc;
         width: 250px;
         margin: 0px 0px 5px 90px ;
+        min-width: 100px;
         display: flex;
         align-items: center;
         padding: 5px 5px;
         justify-content: center;
         border-radius: 2px;
         gap: 10px;
-        .far{
-            font-weight: 600;
-        }
+        flex-wrap: wrap;
         span{
-            padding : 0px 5px;
+            .far{
+                font-weight: 600;
+                color: rgb(117, 183, 249);
+            }
+        }
+        .price-blue{
             text-transform: capitalize;
             font-size: 14px;
             color: rgb(117, 183, 249);
             font-weight: 600;
+            display: flex;
+            flex-wrap: wrap;
+            .price-text{
+                padding-right: 5px;
+            }
         }
     }
 }

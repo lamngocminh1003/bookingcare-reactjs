@@ -8,7 +8,7 @@ import'./ProfileDoctor.scss';
 import  NumericFormat  from 'react-number-format';
 import {getProfileDoctorById} from '../../../services/userService'
 import moment from 'moment/moment';
-import { LanguageServiceMode } from 'typescript';
+import { Link } from 'react-router-dom';
 class ProfileDoctor extends Component {
     constructor(props){
         super(props);
@@ -35,8 +35,12 @@ class ProfileDoctor extends Component {
 
         }
         if(this.props.doctorId !== prevProps.doctorId){
-            // this.getInfoDoctor(this.props.doctorId)
+            let data = await this.getInfoDoctor(this.props.doctorId);
+            this.setState({
+                dataProfile: data,
+            });
         }
+
     }
     capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -66,7 +70,8 @@ class ProfileDoctor extends Component {
     }
     render() {
         let {dataProfile} = this.state
-        let {language,isShowDesDoctor,dataTime} =this.props
+        let {language,isShowDesDoctor,dataTime,isShowLinkDetail,
+        isShowPrice,doctorId} =this.props
         let nameEn='';
         let nameVi='';
         if(dataProfile && dataProfile.positionData){
@@ -101,10 +106,21 @@ class ProfileDoctor extends Component {
                         </div>
                     </div>
                 </div>
+                {isShowLinkDetail === true &&
+                <div className='view-detail-doctor'>
+                    <Link to={`/detail-doctor/${doctorId}`}>
+                        <FormattedMessage id='homepage.more-info'/>
+                    </Link>
+                </div>}
+
+                {isShowPrice === true &&
                 <div className='price'>
                     <span className='far'><i className="far fa-dot-circle fav_language"></i></span>
-                    <span>
-                    <FormattedMessage id='patient.profile-doctor.price'/>
+                    <span className='price-blue'>
+                        <span className='price-text'>
+                            <FormattedMessage id='patient.profile-doctor.price'/>
+                        </span>
+                        <span>
                                 {dataProfile && dataProfile.Doctor_Info && language === LANGUAGES.VI
                                 ?
                                     <NumericFormat
@@ -125,8 +141,9 @@ class ProfileDoctor extends Component {
                                 />
                             :''
                             }
+                        </span>
                     </span>
-                </div>
+                </div>}
             </div>
         );
     }

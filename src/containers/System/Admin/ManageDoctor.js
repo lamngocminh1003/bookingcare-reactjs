@@ -170,6 +170,10 @@ class ManageDoctor extends Component {
                 nameClinic:'',
                 addressClinic:'',
                 note:'',
+                selectedProvince:'',
+                selectedPrice:'',
+                selectedPayment:'',
+                selectedSpecialty:'',
             })
         }
           console.log(`check res:`, res)

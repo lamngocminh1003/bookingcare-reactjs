@@ -126,6 +126,16 @@
             "btn-update":"Lưu thay đổi",
             "btn-add":"Lưu thông tin",
             "specialty":"Chuyên khoa"
+        },
+        "manage-clinic":{
+            "title-add":"Tạo thêm thông tin phòng khám",
+            "title-update":"Cập nhật thông tin phòng khám",
+            "name":"Tên phòng khám",
+            "image":"Ảnh phòng khám",
+            "btn-update":"Lưu thay đổi",
+            "btn-add":"Lưu thông tin",
+            "clinic":"Phòng khám",
+            "address":"Địa chỉ phòng khám"
         }
     }
 }

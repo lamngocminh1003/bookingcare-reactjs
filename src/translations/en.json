@@ -120,11 +120,21 @@
         "manage-specialty":{
             "title-add":"Create more information's specialty",
             "title-update":"Update information's specialty",
-            "name":"Specialty",
+            "name":"Specialty's name",
             "image":"Specialty's image",
             "btn-update":"Save changes",
             "btn-add":"Save information",
             "specialty":"Specialty"
+        },
+        "manage-clinic":{
+            "title-add":"Create more information's clinic",
+            "title-update":"Update information's clinic",
+            "name":"Clinic's name",
+            "image":"Clinic's image",
+            "btn-update":"Save changes",
+            "btn-add":"Save information",
+            "clinic":"Clinic",
+            "address":"Clinic's address"
         }
     }
 }

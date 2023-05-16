@@ -94,7 +94,7 @@ const editClinicService = (inputData) =>{
     return axios.put(`/api/edit-clinic`, inputData);
 }
 const getDetailClinicById = (data) =>{
-    return axios.get(`/api/get-detail-clinic-by-id?id=${data.id}&location=${data.location}`)
+    return axios.get(`/api/get-detail-clinic-by-id?id=${data.id}`)
 }
 export{handleLoginApi,
     getAllUsers,

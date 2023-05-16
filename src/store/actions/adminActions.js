@@ -301,16 +301,19 @@ export const getRequireDoctorInfo= () => {
             let resPayment = await getAllCodeService('PAYMENT');
             let resProvince = await getAllCodeService('PROVINCE');
             let resSpecialty = await getAllSpecialties();
-            // let resClinic = await getAllCodeService('PROVINCE');
+            let resClinic = await getAllClinic();
             if(resPrice && resPrice.errCode === 0 
                 && resPayment && resPayment.errCode === 0 
                 && resProvince && resProvince.errCode === 0
-                && resSpecialty && resSpecialty.errCode === 0){
+                && resSpecialty && resSpecialty.errCode === 0
+                && resClinic && resClinic.errCode === 0
+                ){
                     let data={
                         resPrice:resPrice.data,
                         resPayment:resPayment.data,
                         resProvince:resProvince.data,
                         resSpecialty:resSpecialty.specialties,
+                        resClinic:resClinic.clinic,
                     }
                 dispatch(fetchRequireDoctorInfoSuccess(data))
             }else{

@@ -56,12 +56,15 @@
                     // background-image: url('../../assets/specialty/co-xuong-khop.jpg');
                     margin: 0 auto;
                     margin-bottom: 10px;
+                    cursor: pointer;
+                    color: cornflowerblue;
                 }
                 &.section-medical-facility{
-                    background-image: url('../../assets/medical-facility/thucuc.png');
+                    // background-image: url('../../assets/medical-facility/thucuc.png');
                     margin: 0 auto;
                     margin-bottom: 10px;
                     cursor: pointer;
+                    color: cornflowerblue;
                 }
                 &.section-outstanding-doctor{
                     // background-image: url('../../assets/outstanding-doctor/anh-dai-dien-bs.jpg');
@@ -74,10 +77,12 @@
                     background-position: center;
                     background-repeat: no-repeat;
                     cursor: pointer;
+                    color: cornflowerblue;
                 }
                 &.section-handbook{
                     background-image: url('../../assets/handbook/kham-mat-q7.jpg');
                     cursor: pointer;
+                    color: cornflowerblue;
                 }
             }
         }
@@ -87,6 +92,16 @@
     cursor: pointer;
     .specialty-name{
         padding: 10px 0;
+        &:hover{
+            color: cornflowerblue;
+        }
+    }
+}
+.specialty-child{
+    cursor: pointer;
+    .clinic-name{
+        padding: 10px 0;
+        cursor: pointer;
         &:hover{
             color: cornflowerblue;
         }
@@ -124,6 +139,7 @@
         }
     }
 }
+
 .section-outstanding-doctor{
     .outer-bg{
         display: flex;
@@ -135,6 +151,27 @@
         .customize-border{
             padding: 5px;
             cursor: pointer;
+            &:hover{
+                color: cornflowerblue;
+            }
+        }
+    }
+}
+
+.section-clinic{
+    &.outer-bg{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    &.section-customize{
+        padding: 5px;
+        .customize-border{
+            padding: 5px;
+            cursor: pointer;
+            &:hover{
+                color: cornflowerblue;
+            }
         }
     }
 }
@@ -166,5 +203,12 @@
             font-style: italic;
             text-align: justify;
         }
+    }
+}
+.clinic-name{
+    cursor: pointer;
+    padding: 10px 0;
+    &:hover{
+        color: cornflowerblue;
     }
 }

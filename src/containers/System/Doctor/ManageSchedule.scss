@@ -1,4 +1,5 @@
 .manage-schedule-container{
+    padding-top: 50px;
     .m-s-title{
         text-transform: uppercase;
         margin: 15px 0 ;
@@ -14,6 +15,8 @@
         }
     }
     .btn-save-schedule{
-        margin-top: 20px;
+        margin: 40px auto;
+        padding: 10px 20px;
+        display: flex;
     }
 }

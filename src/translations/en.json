@@ -27,7 +27,7 @@
             "manage-doctor":"Manage doctors",
             "manage-admin":"Manage admins",
             "crud":"CRUD user",
-            "crud-redux":"CRUD redux",
+            "crud-redux":"Manage users",
             "clinic":"Clinics",
             "manage-clinic":"Manage clinic",
             "specialty":"Specialties",
@@ -36,7 +36,8 @@
             "manage-handbook":"Manage Handbook"
         },
         "doctor": {
-            "manage-schedule":"Manage Doctor's Schedule"
+            "manage-schedule":"Manage Doctor's Schedule",
+            "manage-patient":"Manage Doctor's Patient"
         }
     },
     "manage-user":{
@@ -93,7 +94,9 @@
             "gender":"Sex",
             "selectedGender":"Select gender",
             "accept":"Confirm",
-            "cancel":"Cancel"
+            "cancel":"Cancel",
+            "lastName":"Last name",
+            "firstName":"First name"
         },
         "profile-doctor":{
             "free-booking":"Free booking",

@@ -24,6 +24,12 @@
         .booking-modal-body{
             height: 100%;
             padding: 15px ;
+            .col-6{
+                margin-top: 5px;
+            }
+            .col-4{
+                margin-top: 5px;
+            }
         }
         .booking-modal-footer{
             display: flex;

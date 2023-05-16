@@ -16,7 +16,8 @@ class BookingModal extends Component {
     constructor(props){
         super(props);
         this.state = {
-            fullName:'',
+            lastName:'',
+            firstName:'',
             phoneNumber:'',
             email:'',
             address:'',
@@ -108,10 +109,14 @@ class BookingModal extends Component {
         return ''
     }
     handleConfirmBooking=async()=>{
-        let {fullName , phoneNumber , email,address,reason,birthday,selectedGender} = this.state
+        let {lastName, firstName, phoneNumber , email,address,reason,birthday,selectedGender} = this.state
 
-        if(!fullName){
-            toast.error("Invalid full name!");
+        if(!lastName){
+            toast.error("Invalid last name!");
+            return;
+        }
+        if(!firstName){
+            toast.error("Invalid first name!");
             return;
         }
         if(!phoneNumber){
@@ -142,7 +147,8 @@ class BookingModal extends Component {
         let date = new Date(this.state.birthday).getTime();
         let timeString = this.buildTimeBooking(this.props.dataTime)
         let res = await postPatientBookingAppointment({
-            fullName:this.state.fullName,
+            lastName:this.state.lastName,
+            firstName:this.state.firstName,
             phoneNumber:this.state.phoneNumber,
             email:this.state.email,
             address:this.state.address,
@@ -202,18 +208,21 @@ class BookingModal extends Component {
                             <div className='row'>
                                 <div className='col-6'>
                                     <label>
-                                        <FormattedMessage id='patient.booking-modal.fullName'/>
+                                        <FormattedMessage id='patient.booking-modal.lastName'/>
                                     </label>
                                     <input  className='form-control'
-                                    value={this.state.fullName}
-                                    onChange={(event)=>this.handleOnChangeInput(event,'fullName')}
+                                    value={this.state.lastName}
+                                    onChange={(event)=>this.handleOnChangeInput(event,'lastName')}
                                     />
                                 </div>
                                 <div className='col-6'>
-                                    <label><FormattedMessage id='patient.booking-modal.phoneNumber'/></label>
+                                    <label>
+                                        <FormattedMessage id='patient.booking-modal.firstName'/>
+                                    </label>
                                     <input  className='form-control'
-                                    value={this.state.phoneNumber}
-                                    onChange={(event)=>this.handleOnChangeInput(event,'phoneNumber')}/>
+                                    value={this.state.firstName}
+                                    onChange={(event)=>this.handleOnChangeInput(event,'firstName')}
+                                    />
                                 </div>
                                 <div className='col-6'>
                                     <label><FormattedMessage id='patient.booking-modal.email'/></label>
@@ -234,7 +243,13 @@ class BookingModal extends Component {
                                     value={this.state.reason}
                                     onChange={(event)=>this.handleOnChangeInput(event,'reason')}/>
                                 </div>
-                                <div className='col-6'>
+                                <div className='col-4'>
+                                    <label><FormattedMessage id='patient.booking-modal.phoneNumber'/></label>
+                                    <input  className='form-control'
+                                    value={this.state.phoneNumber}
+                                    onChange={(event)=>this.handleOnChangeInput(event,'phoneNumber')}/>
+                                </div>
+                                <div className='col-4'>
                                     <label><FormattedMessage id='patient.booking-modal.birthday'/></label>
                                     <DatePicker
                                     onChange={this.handleOnChangeDatePicker}
@@ -243,7 +258,7 @@ class BookingModal extends Component {
                                     value={this.state.birthday}
                                     />
                                 </div>
-                                <div className='col-6'>
+                                <div className='col-4'>
                                     <label><FormattedMessage id='patient.booking-modal.gender'/></label>
                                     <Select
                                     value={this.state.selectedGender}

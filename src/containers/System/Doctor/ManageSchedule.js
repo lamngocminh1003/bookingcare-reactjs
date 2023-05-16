@@ -169,7 +169,7 @@ class ManageSchedule extends Component {
                         </div>
                         <div className='col-12'>
                             <button 
-                            className='btn btn-primary btn-save-schedule'
+                            className='btn btn-warning btn-save-schedule'
                             onClick={()=>this.handleSaveSchedule()}>
                                 <FormattedMessage id='manage-schedule.save'/>
                             </button>

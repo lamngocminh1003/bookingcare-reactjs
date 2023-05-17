@@ -5,7 +5,19 @@
     .manage-patient-body{
         padding: 0 20px;
         .table-manage-patient{
-            
+            .doctor-action{
+                display: flex;
+                gap: 10px;
+                justify-content: space-around;
+                .btn{
+                    padding: 8px 15px;
+                }
+            }
+            .no-have-booking{
+                align-items: center;
+                font-size: 18px;
+                text-transform: capitalize;
+            }
         }
     }
 }

@@ -96,6 +96,10 @@ const editClinicService = (inputData) =>{
 const getDetailClinicById = (data) =>{
     return axios.get(`/api/get-detail-clinic-by-id?id=${data.id}`)
 }
+
+const getAllPatientForDoctor = (data) =>{
+    return axios.get(`/api/get-list-patients-for-doctor?doctorId=${data.doctorId}&date=${data.date}`)
+}
 export{handleLoginApi,
     getAllUsers,
     createNewUserService,
@@ -121,4 +125,5 @@ export{handleLoginApi,
     editClinicService,
     deleteClinicService,
     getAllClinic,
+    getAllPatientForDoctor
 }

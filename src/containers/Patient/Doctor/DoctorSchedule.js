@@ -7,7 +7,7 @@ import localization from "moment/locale/vi";
 import { FormattedMessage } from 'react-intl';
 import {LANGUAGES} from "../../../utils"
 import BookingModal from '../Modal/BookingModal';
-import {getScheduleDoctorByDate} from "../../../services/userService"
+import {getScheduleDoctorByDate} from "../../../services/userService";
 class DoctorSchedule extends Component {
     constructor(props){
         super(props);
@@ -15,7 +15,7 @@ class DoctorSchedule extends Component {
             allDays : [],
             allAvailableTimes :[],
             isOpenModalBooking : false,
-            dataScheduleTimeModal:{}
+            dataScheduleTimeModal:{},
         }
     }
     async componentDidMount(){

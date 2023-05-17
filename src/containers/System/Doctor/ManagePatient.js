@@ -4,24 +4,32 @@ import { FormattedMessage } from 'react-intl';
 import {LANGUAGES} from "../../../utils";
 import moment from 'moment/moment';
 import './ManagePatient.scss';
-import {getAllPatientForDoctor} from '../../../services/userService'
+import {getAllPatientForDoctor,postSendRemedy} from '../../../services/userService'
 import DatePicker from ' ../../../src/components/Input/DatePicker';
+import RemedyModal from './RemedyModal';
+import { toast } from "react-toastify";
+import LoadingOverlay from 'react-loading-overlay';
 class ManagePatient extends Component {
     constructor(props){
         super(props);
         this.state = {
             currentDate: moment(new Date()).startOf('day').valueOf(),
-            dataPatient:[]
+            dataPatient:[],
+            isOpenRemedyModal: false,
+            dataModal:{},
+            isCloseRemedyModal:false,
+            isShowLoadingOverlay:false
         }
     }
     async componentDidMount(){
+
+        this.getDataPatient()
+        
+    }
+     getDataPatient = async ()=>{
         let {user} = this.props
         let {currentDate}= this.state
         let formattedDate = new Date(currentDate).getTime();
-        this.getDataPatient(user,formattedDate)
-        
-    }
-     getDataPatient = async (user,formattedDate)=>{
         let res =await getAllPatientForDoctor({
             doctorId:user.id,
             date: formattedDate
@@ -40,80 +48,138 @@ class ManagePatient extends Component {
     handleOnChangeDatePicker=(date)=>{
         this.setState({
             currentDate:date[0]
-        },()=>{
-            let {user} = this.props
-            let {currentDate}= this.state
-            let formattedDate = new Date(currentDate).getTime();
-            this.getDataPatient(user,formattedDate)
+        }, async()=>{
+            await this.getDataPatient()
         })
     }
-    handleBtnConfirm=()=>{}
-    handleBtnFee=()=>{}
+    handleBtnConfirm=(item)=>{
+        let data ={
+            doctorId:item.doctorId,
+            patientId:item.patientId,
+            email:  item.patientData.email,
+            lastName: item.patientData.lastName,
+            firstName: item.patientData.firstName,
+            timeType:item.timeType
+        }
+        this.setState({
+            isOpenRemedyModal:true,
+            dataModal:data
+        })
+    }
+    isCloseRemedyModal=()=>{
+        this.setState({
+            isOpenRemedyModal:false,
+            dataModal:{}
+        })
+    }
+    sendRemedy = async(dataChild)=>{
+        let {dataModal}= this.state
+        this.setState({
+            isShowLoadingOverlay:true
+        })
+        let res =await postSendRemedy({
+            email:dataChild.email,
+            firstName:dataChild.firstName,
+            imageBase64: dataChild.imageBase64,
+            doctorId:dataModal.doctorId,
+            patientId:dataModal.patientId,
+            timeType:dataModal.timeType,
+            language:this.props.language
+        });
+        if(res && res.errCode ===0){
+            this.setState({
+                isShowLoadingOverlay:false
+            })
+            toast.success('Send Remedy successfully')
+            await this.getDataPatient()
+            this.isCloseRemedyModal()
+        }else{
+            this.setState({
+                isShowLoadingOverlay:false
+            })
+            toast.error('Something is wrong ')
+            console.log('error sending remedy',res);
+        }
+    }
     render() {
-        console.log('checking state:',this.state);
-        let {dataPatient} = this.state
+        let {dataPatient,currentDate,isOpenRemedyModal,dataModal} = this.state
+        let {language} = this.props
         return (
-            <div className='manage-patient-container'>
-                <div className='m-p-title title'>
-                    Quản lý bệnh nhân khám bệnh
-                </div>
-                <div className='manage-patient-body row'>
-                    <div className='col-4 form-group'>
-                        <label>Chọn ngày khám</label>
-                        <DatePicker
-                            onChange={this.handleOnChangeDatePicker}
-                            className='form-control'
-                            selectedDate={this.state.currentDate}
-                            />
+            <>
+                <LoadingOverlay
+                active={this.state.isShowLoadingOverlay}
+                spinner
+                text='Loading ...'
+                >
+                <div className='manage-patient-container'>
+                    <div className='m-p-title title'>
+                        Quản lý bệnh nhân khám bệnh
                     </div>
-                    <div className='col-12 table-manage-patient'>
-                        <table id="customers">
-                            <tbody>
-                                <tr>
-                                    <th>STT</th>
-                                    <th>Thời gian</th>
-                                    <th>Last name</th>
-                                    <th>First name</th>
-                                    <th>Phone Number</th>
-                                    <th>Giới tính</th>
-                                    <th>Address</th>
-                                    <th>Lý do khám</th>
-                                    <th></th>
-                                </tr> 
-                                {dataPatient && dataPatient.length>0
-                                ? dataPatient.map ((item, index) =>{
-                                    return( 
-                                        <tr key={index}>
-                                            <td>{index+1}</td>
-                                            <td>{item.timeTypeDataPatient.valueVi}</td>
-                                            <td>{item.patientData.lastName}</td>
-                                            <td>{item.patientData.firstName}</td>
-                                            <td>{item.patientData.phoneNumber}</td>
-                                            <td>{item.patientData.genderData.valueVi}</td>
-                                            <td>{item.patientData.address}</td>
-                                            <td>{item.patientData.reason}</td>
-                                            <td className='doctor-action'>
-                                                <button className='btn btn-success'
-                                                onClick={()=> this.handleBtnConfirm()}
-                                                >Xác nhận</button>
-                                                <button className='btn btn-info'
-                                                onClick={()=> this.handleBtnFee()}
-                                                >Gửi hóa đơn</button>
-                                            </td>
-                                        </tr>
-                                    )
-                                }):
-                                <tr>
-                                    <td colspan="9" className='no-have-booking text-center'
-                                    >Ngày này hiện chưa có bệnh nhân đăng ký khám!</td>
-                                </tr>
-                                
-                                }
-                            </tbody>
-                        </table>
+                    <div className='manage-patient-body row'>
+                        <div className='col-4 form-group'>
+                            <label>Chọn ngày khám</label>
+                            <DatePicker
+                                onChange={this.handleOnChangeDatePicker}
+                                className='form-control'
+                                selectedDate={currentDate}
+                                />
+                        </div>
+                        <div className='col-12 table-manage-patient'>
+                            <table id="customers">
+                                <tbody>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Thời gian</th>
+                                        <th>Last name</th>
+                                        <th>First name</th>
+                                        <th>Phone Number</th>
+                                        <th>Giới tính</th>
+                                        <th>Address</th>
+                                        <th>Lý do khám</th>
+                                        <th></th>
+                                    </tr> 
+                                    {dataPatient && dataPatient.length>0
+                                    ? dataPatient.map ((item, index) =>{
+                                        let gender = language === LANGUAGES.VI ?item.patientData.genderData.valueVi : item.patientData.genderData.valueEn
+                                        let time = language === LANGUAGES.VI ?item.timeTypeDataPatient.valueVi : item.timeTypeDataPatient.valueEn
+                                        return( 
+                                            <tr key={index}>
+                                                <td>{index+1}</td>
+                                                <td>{time}</td>
+                                                <td>{item.patientData.lastName}</td>
+                                                <td>{item.patientData.firstName}</td>
+                                                <td>{item.patientData.phoneNumber}</td>
+                                                <td>{gender}</td>
+                                                <td>{item.patientData.address}</td>
+                                                <td>{item.patientData.reason}</td>
+                                                <td className='doctor-action'>
+                                                    <button className='btn btn-success'
+                                                    onClick={()=> this.handleBtnConfirm(item)}
+                                                    >Xác nhận
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        )
+                                    }):
+                                    <tr>
+                                        <td colspan="9" className='no-have-booking text-center'
+                                        >Ngày này hiện chưa có bệnh nhân đăng ký khám!</td>
+                                    </tr>
+                                    
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <RemedyModal
+                isOpenModalBooking={isOpenRemedyModal}
+                dataModal={dataModal}
+                closeBookingModal={this.isCloseRemedyModal}
+                sendRemedy={this.sendRemedy}
+                />
+                </LoadingOverlay>
+            </>
         );
     }
 }

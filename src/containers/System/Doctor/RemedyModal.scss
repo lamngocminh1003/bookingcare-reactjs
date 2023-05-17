@@ -1,0 +1,16 @@
+
+.preview-img-fee-container{
+    padding: 0 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    .preview-fee-image{
+            width: 150px;
+            height: 50px;
+            border: 1px solid #ddd ;
+            background: center center no-repeat;
+            background-size: contain;
+            cursor: pointer; 
+    }
+}

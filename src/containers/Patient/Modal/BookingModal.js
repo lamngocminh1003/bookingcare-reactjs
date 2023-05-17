@@ -12,6 +12,7 @@ import * as actions from '../../../../src/store/actions';
 import Select from 'react-select';
 import { toast } from "react-toastify";
 import {postPatientBookingAppointment} from '../../../../src/services/userService'
+import LoadingOverlay from 'react-loading-overlay';
 class BookingModal extends Component {
     constructor(props){
         super(props);
@@ -27,6 +28,7 @@ class BookingModal extends Component {
             genders:'',
             selectedGender: '',
             timeType:'',
+            isShowLoadingOverlay:false
         }
     }
     async componentDidMount(){
@@ -109,6 +111,7 @@ class BookingModal extends Component {
         return ''
     }
     handleConfirmBooking=async()=>{
+
         let {lastName, firstName, phoneNumber , email,address,reason,birthday,selectedGender} = this.state
 
         if(!lastName){
@@ -146,6 +149,9 @@ class BookingModal extends Component {
         let doctorName = this.buildDoctorName(this.props.dataTime)
         let date = new Date(this.state.birthday).getTime();
         let timeString = this.buildTimeBooking(this.props.dataTime)
+        this.setState({
+            isShowLoadingOverlay:true
+        })
         let res = await postPatientBookingAppointment({
             lastName:this.state.lastName,
             firstName:this.state.firstName,
@@ -163,9 +169,15 @@ class BookingModal extends Component {
             doctorName:doctorName
         })
         if(res && res.errCode === 0 ) {
+            this.setState({
+                isShowLoadingOverlay:false
+            })
             toast.success("Booking an appointment successfully");
             this.props.closeBookingModal();
         }else{
+            this.setState({
+                isShowLoadingOverlay:false
+            })
             toast.error("Booking an appointment error");
         }
         console.log("check confirmation", this.state);
@@ -179,6 +191,11 @@ class BookingModal extends Component {
         }
         return (
             <div >
+                <LoadingOverlay
+                active={this.state.isShowLoadingOverlay}
+                spinner
+                text='Loading ...'
+                >
                 <Modal
                 isOpen={isOpenModalBooking}
                 className={'booking-modal-container'}
@@ -280,6 +297,7 @@ class BookingModal extends Component {
                         </div>
                     </div>
                 </Modal>
+                </LoadingOverlay>
             </div>
         );
     }

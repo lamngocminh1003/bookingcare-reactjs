@@ -1,3 +1,9 @@
+div._loading_overlay_wrapper{
+    position: unset;
+    ._loading_overlay_overlay{
+        z-index: 100000000000000000000000;
+    }
+}
 .manage-patient-container{
     .m-p-title{
         margin: 30px 0;

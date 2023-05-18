@@ -103,6 +103,26 @@ const getAllPatientForDoctor = (data) =>{
 const postSendRemedy = (data) =>{
     return axios.post(`/api/send-remedy`,data)
 }
+
+const createNewHandbook = (data) =>{
+    return axios.post(`/api/create-new-handbook`,data)
+}
+const getAllHandbook = () =>{
+    return axios.get(`/api/get-all-handbook`)
+}
+const deleteHandbookService =(handbookId) =>{
+    return axios.delete(`/api/delete-handbook`, {
+        data: {
+          id: handbookId
+        }
+      });
+}
+const editHandbookService = (inputData) =>{
+    return axios.put(`/api/edit-handbook`, inputData);
+}
+const getDetailHandbookById = (data) =>{
+    return axios.get(`/api/get-detail-handbook-by-id?id=${data.id}`)
+}
 export{handleLoginApi,
     getAllUsers,
     createNewUserService,
@@ -129,5 +149,10 @@ export{handleLoginApi,
     deleteClinicService,
     getAllClinic,
     getAllPatientForDoctor,
-    postSendRemedy
+    postSendRemedy,
+    getDetailHandbookById,
+    editHandbookService,
+    deleteHandbookService,
+    getAllHandbook,
+    createNewHandbook
 }

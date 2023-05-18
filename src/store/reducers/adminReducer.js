@@ -11,6 +11,7 @@ const initialState = {
     allScheduleTime:[],
     allRequiredDoctorInfo:[],
     specialties:[],
+    handbooks:[],
     clinic:[],
 }
 
@@ -66,7 +67,17 @@ const adminReducer = (state = initialState, action) => {
                 ...state,
             }
         case actionTypes.FETCH_ALL_SPECIALTIES_FAILED:
-            state.specialties =[];
+            state.handbooks =[];
+            return {
+                ...state,
+            }
+        case actionTypes.FETCH_ALL_HANDBOOK_SUCCESS:
+            state.handbooks = action.handbook;
+            return {
+                ...state,
+            }
+        case actionTypes.FETCH_ALL_HANDBOOK_FAILED:
+            state.handbooks =[];
             return {
                 ...state,
             }

@@ -38,6 +38,7 @@ class TableManageClinic extends Component {
                 <table id="TableManageClinic">
                 <tbody>
                     <tr>
+                        <th><FormattedMessage id="admin.manage-handbook.ordinal-number" /></th>
                         <th><FormattedMessage id="admin.manage-clinic.clinic" /> </th>
                         <th><FormattedMessage id="manage-user.address" /> </th>
                         <th> </th>
@@ -46,6 +47,7 @@ class TableManageClinic extends Component {
                     arrClinic.map((item, index) =>{
                         return(
                             <tr key={index}>
+                                <td>{index+1}</td>
                                 <td>{item.name}</td>
                                 <td>{item.address}</td>
                                 <td className='action'>

@@ -11,6 +11,11 @@
         "support":"Hỗ trợ",
         "welcome": "Xin chào, "
     },
+    "home-footer": {
+        "source":"2023 Báo cáo môn học Phát triển phần mềm mã nguồn mở và Quản lý dự án phần mềm nhóm 2",
+        "contact":"Mọi chi tiết xin liên hệ với quản lý chính: Ngọc Minh ",
+        "here":" Tại đây "
+    },
     "banner":{
         "title1":"NỀN TẢNG Y TẾ",
         "title2":"CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
@@ -55,13 +60,22 @@
         "upload-avt":"Tải ảnh ",
         "save":"Lưu người dùng",
         "edit":"Lưu thay đổi"
+
     },
     "homepage": {
         "outstanding-doctor":"Bác sĩ nổi bậc tuần qua",
         "search":"Tìm kiếm",
         "specialty-popular":"Chuyên khoa phổ biến",
-        "more-info":"Xem thêm"
+        "more-info":"Xem thêm",
+        "outstanding-facility":"Cơ sở y tế nổi bật",
+        "handbook":"Cẩm nang"
 
+
+    },
+    "about": {
+        "about-BookingCare":"Truyền thông nói về BookingCare",
+        "des1":"BookingCare giúp bệnh nhân dễ dàng lựa chọn đúng bác sĩ từ mạng lưới bác sĩ chuyên khoa giỏi, với thông tin đã xác thực và đặt lịch nhanh chóng. Bác sĩ chuyên khoa giỏi, được nhiều bệnh nhân tin tưởng, đồng nghiệp đánh giá cao, có uy tín trong ngành.",
+        "des2":"Bên cạnh đó, hệ thống ghi nhận ý kiến đánh giá phản hồi của bệnh nhân sau khi đi khám và phương án điều trị của từng bác sĩ. Từ đó chúng tôi có thêm thông tin để giới thiệu trên hệ thống những bác sĩ uy tín, chuyên môn cao."
     },
     "manage-schedule": {
         "title":"Quản lý kế hoạch khám bệnh của bác sĩ",
@@ -139,6 +153,25 @@
             "btn-add":"Lưu thông tin",
             "clinic":"Phòng khám",
             "address":"Địa chỉ phòng khám"
+        },
+        "manage-handbook":{
+            "title-add":"Tạo thêm thông tin cẩm nang",
+            "title-update":"Cập nhật thông tin cẩm nang",
+            "name":"Tên cẩm nang",
+            "image":"Ảnh cẩm nang",
+            "btn-update":"Lưu thay đổi",
+            "btn-add":"Lưu thông tin",
+            "handbook":"Cẩm nang",
+            "address":"Địa chỉ cẩm nang",
+            "ordinal-number":"STT"
+        },
+        "manage-patient":{
+            "title":"Quản lý bệnh nhân khám bệnh",
+            "choose-date":"Chọn ngày khám",
+            "time":"Thời gian",
+            "reason":"Lý do khám",
+            "no-appointment":"Ngày này hiện chưa có bệnh nhân đăng ký khám!"
         }
+
     }
 }

@@ -4,7 +4,8 @@ import {getAllCodeService,createNewUserService,
     editUserService,getTopDoctorHomeService,getAllDoctors,
     saveDetailDoctor,getAllSpecialties,deleteSpecialtyService,
     editSpecialtyService,editClinicService
-,deleteClinicService,getAllClinic} from "../../services/userService"
+,deleteClinicService,getAllClinic,getAllHandbook,
+deleteHandbookService,editHandbookService} from "../../services/userService"
 import { toast } from "react-toastify";
 
 // export const fetchGenderStart = () => ({
@@ -478,7 +479,7 @@ export const editClinic = (clinic) => {
                 dispatch(fetchAllClinicStart()) ;
             }else{
                 toast.error("Update the clinic error!");
-                dispatch(editSpecialtyFailed());
+                dispatch(editClinicFailed());
             }
         } catch (e) {
             toast.error("Update the clinic error!");
@@ -493,4 +494,84 @@ export const editClinicSuccess =()=>({
 
 export const editClinicFailed =()=>({
     type: actionTypes.EDIT_CLINIC_FAILED
+})
+
+
+export const fetchAllHandbookStart = () => {
+    return async(dispatch,getState)=>{
+        try {
+            let res = await getAllHandbook() ;
+            if(res && res.errCode === 0){
+                dispatch(fetchAllHandbookSuccess(res.handbook.reverse()))
+            }else{
+                dispatch(fetchAllHandbookFailed());
+            }
+        } catch (e) {
+            dispatch(fetchAllHandbookFailed());
+        }
+    }
+}
+
+export const fetchAllHandbookSuccess = (handbook) => ({
+    type: actionTypes.FETCH_ALL_HANDBOOK_SUCCESS,
+    handbook:handbook
+})
+
+export const fetchAllHandbookFailed = () => ({
+    type: actionTypes.FETCH_ALL_HANDBOOK_FAILED,
+})
+
+export const deleteHandbook = (handbookId) => {
+    return async(dispatch,getState)=>{
+
+        try {
+            let res = await deleteHandbookService(handbookId) ;
+            if(res && res.errCode === 0){
+                toast.success("Delete the handbook successfully!");
+                dispatch(deleteHandbookSuccess())
+                dispatch(fetchAllHandbookStart()) ;
+            }else{
+                toast.error("Delete the handbook error!");
+                dispatch(deleteHandbookFailed());
+            }
+        } catch (e) {
+            toast.error("Delete the handbook error!");
+            dispatch(deleteHandbookFailed());
+        }
+    }
+}
+
+export const deleteHandbookSuccess =()=>({
+    type: actionTypes.DELETE_HANDBOOK_SUCCESS
+})
+export const deleteHandbookFailed =()=>({
+    type: actionTypes.DELETE_HANDBOOK_FAILED
+})
+
+export const editHandbook = (handbook) => {
+    return async(dispatch,getState)=>{
+
+        try {
+            let res = await editHandbookService(handbook) ;
+            toast.success("Update the handbook successfully!");
+            if(res && res.errCode === 0){
+                dispatch(editHandbookSuccess())
+                dispatch(fetchAllHandbookStart()) ;
+            }else{
+                toast.error("Update the handbook error!");
+                dispatch(editHandbookFailed());
+            }
+        } catch (e) {
+            toast.error("Update the handbook error!");
+            dispatch(editHandbookFailed());
+        }
+    }
+}
+
+export const editHandbookSuccess =()=>({
+    type: actionTypes.EDIT_HANDBOOK_SUCCESS
+})
+
+export const editHandbookFailed =()=>({
+    type: actionTypes.EDIT_HANDBOOK_FAILED
 })

@@ -113,11 +113,11 @@ class ManagePatient extends Component {
                 >
                 <div className='manage-patient-container'>
                     <div className='m-p-title title'>
-                        Quản lý bệnh nhân khám bệnh
+                        <FormattedMessage id="admin.manage-patient.title" />
                     </div>
                     <div className='manage-patient-body row'>
                         <div className='col-4 form-group'>
-                            <label>Chọn ngày khám</label>
+                            <label><FormattedMessage id="admin.manage-patient.choose-date" /></label>
                             <DatePicker
                                 onChange={this.handleOnChangeDatePicker}
                                 className='form-control'
@@ -128,14 +128,14 @@ class ManagePatient extends Component {
                             <table id="customers">
                                 <tbody>
                                     <tr>
-                                        <th>STT</th>
-                                        <th>Thời gian</th>
-                                        <th>Last name</th>
-                                        <th>First name</th>
-                                        <th>Phone Number</th>
-                                        <th>Giới tính</th>
-                                        <th>Address</th>
-                                        <th>Lý do khám</th>
+                                        <th><FormattedMessage id="admin.manage-handbook.ordinal-number" /></th>
+                                        <th><FormattedMessage id="admin.manage-patient.time" /></th>
+                                        <th><FormattedMessage id="manage-user.lastName" /></th>
+                                        <th><FormattedMessage id="manage-user.firstName" /></th>
+                                        <th><FormattedMessage id="manage-user.phoneNumber" /></th>
+                                        <th><FormattedMessage id="manage-user.gender" /></th>
+                                        <th><FormattedMessage id="manage-user.address" /></th>
+                                        <th><FormattedMessage id="admin.manage-patient.reason" /></th>
                                         <th></th>
                                     </tr> 
                                     {dataPatient && dataPatient.length>0
@@ -155,7 +155,7 @@ class ManagePatient extends Component {
                                                 <td className='doctor-action'>
                                                     <button className='btn btn-success'
                                                     onClick={()=> this.handleBtnConfirm(item)}
-                                                    >Xác nhận
+                                                    ><FormattedMessage id="patient.booking-modal.accept" />
                                                     </button>
                                                 </td>
                                             </tr>
@@ -163,7 +163,7 @@ class ManagePatient extends Component {
                                     }):
                                     <tr>
                                         <td colspan="9" className='no-have-booking text-center'
-                                        >Ngày này hiện chưa có bệnh nhân đăng ký khám!</td>
+                                        ><FormattedMessage id="admin.manage-patient.no-appointment" /></td>
                                     </tr>
                                     
                                     }

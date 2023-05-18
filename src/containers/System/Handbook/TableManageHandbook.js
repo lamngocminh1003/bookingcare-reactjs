@@ -2,58 +2,58 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import * as actions from "../../../store/actions";
 import { connect } from 'react-redux';
-import './TableManageSpecialty.scss';
+import './TableManageHandbook.scss';
 import 'react-markdown-editor-lite/lib/index.css';
 
-class TableManageSpecialty extends Component {
+class TableManageHandbook extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            specialtiesRedux:[]
+            handbooksRedux:[]
         }
     }
     componentDidMount(){
-        this.props.fetchSpecialtiesRedux();
+        this.props.fetchHandbooksRedux();
     }
     componentDidUpdate(prevProps, prevState,  snapshot){
-        if(prevProps.listSpecialties !==this.props.listSpecialties){
+        if(prevProps.listHandbooks !==this.props.listHandbooks){
             this.setState({
-                specialtiesRedux:this.props.listSpecialties
+                handbooksRedux:this.props.listHandbooks
             })
         }
     }
-    handleDeleteSpecialty =(specialty)=>{
-        this.props.deleteASpecialtyRedux(specialty.id);
+    handleDeleteHandbook =(handbook)=>{
+        this.props.deleteAHandbookRedux(handbook.id);
     }
-    handleEditSpecialty =(specialty)=>{
-        this.props.handleEditSpecialtyFromParentKey(specialty)
+    handleEditHandbook =(handbook)=>{
+        this.props.handleEditHandbookFromParentKey(handbook)
     }
     render() {
-        console.log('check all specialties: ', this.props.listSpecialties)
-        console.log('check state: ', this.state.specialtiesRedux)
-        let arrSpecialties = this.state.specialtiesRedux;
+        console.log('check all handbooks: ', this.props.listHandbooks)
+        console.log('check state: ', this.state.handbooksRedux)
+        let arrHandbooks = this.state.handbooksRedux;
         return (
             <React.Fragment>
-                <table id="TableManageSpecialty">
+                <table id="TableManageHandbook">
                 <tbody>
                     <tr>
-                        <th style={{width: `80px`,}}><FormattedMessage id="admin.manage-handbook.ordinal-number" /></th>
-                        <th><FormattedMessage id="admin.manage-specialty.specialty" /> </th>
+                        <th ><FormattedMessage id="admin.manage-handbook.ordinal-number" /></th>
+                        <th><FormattedMessage id="admin.manage-handbook.handbook" /> </th>
                         <th> </th>
                     </tr>
-                    {arrSpecialties && arrSpecialties.length >0 &&
-                    arrSpecialties.map((item, index) =>{
+                    {arrHandbooks && arrHandbooks.length >0 &&
+                    arrHandbooks.map((item, index) =>{
                         return(
                             <tr key={index}>
                                 <td>{index+1}</td>
                                 <td>{item.name}</td>
                                 <td className='action'>
                                     <button
-                                    onClick={() =>this.handleEditSpecialty(item)} 
+                                    onClick={() =>this.handleEditHandbook(item)} 
                                     className='btn-edit' ><i className="fas fa-pencil-alt"></i></button>
                                     <button
-                                    onClick={() =>this.handleDeleteSpecialty(item)} 
+                                    onClick={() =>this.handleDeleteHandbook(item)} 
                                     className='btn-delete' ><i className="fas fa-trash"></i></button>
                                 </td>
                             </tr>
@@ -69,15 +69,15 @@ class TableManageSpecialty extends Component {
 
 const mapStateToProps = state => {
     return {
-        listSpecialties: state.admin.specialties
+        listHandbooks: state.admin.handbooks
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchSpecialtiesRedux: ()=> dispatch(actions.fetchAllSpecialtiesStart()),
-        deleteASpecialtyRedux: (id)=> dispatch(actions.deleteSpecialty(id))
+        fetchHandbooksRedux: ()=> dispatch(actions.fetchAllHandbookStart()),
+        deleteAHandbookRedux: (id)=> dispatch(actions.deleteHandbook(id))
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TableManageSpecialty);
+export default connect(mapStateToProps, mapDispatchToProps)(TableManageHandbook);

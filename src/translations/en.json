@@ -11,6 +11,11 @@
         "support":"Support",
         "welcome": "Welcome, "
     },
+    "home-footer": {
+        "source":"2023 Course report Open source software development and Software project management group 2",
+        "contact":"For more information, please contact the main manager: Amie ",
+        "here":" Click here "
+    },
     "banner":{
         "title1":"MEDICAL PLATFORM",
         "title2":"COMPREHENSIVE HEALTH CARE",
@@ -60,7 +65,14 @@
         "outstanding-doctor":"Last week's featured doctor",
         "search":"Searching",
         "specialty-popular":"Popular specialties",
-        "more-info":"View more info"
+        "more-info":"View more info",
+        "outstanding-facility":"Outstanding medical facility",
+        "handbook":"Handbook"
+    },
+    "about": {
+        "about-BookingCare":"Media talk about Booking Care",
+        "des1":"Booking Care makes it easy for patients to choose the right doctor from a network of qualified specialists, with verified information and quick booking. Good specialist doctor, trusted by many patients, highly appreciated by colleagues, reputable in the industry.",
+        "des2":"In addition, the system records the patient's feedback after the examination and the treatment plan of each doctor. From there, we have more information to introduce on the system of reputable and highly specialized doctors."
     },
     "manage-schedule": {
         "title":"Manage doctor's examination plan",
@@ -138,6 +150,24 @@
             "btn-add":"Save information",
             "clinic":"Clinic",
             "address":"Clinic's address"
+        },
+        "manage-handbook":{
+            "title-add":"Create more information's handbook",
+            "title-update":"Update information's handbook",
+            "name":"Handbook's name",
+            "image":"Handbook's image",
+            "btn-update":"Save changes",
+            "btn-add":"Save information",
+            "handbook":"Handbook",
+            "address":"Handbook's address",
+            "ordinal-number":"Ordinal number"
+        },
+        "manage-patient":{
+            "title":"Management of medical examination patients",
+            "choose-date":"Choose date",
+            "time":"Time",
+            "reason":"Reason",
+            "no-appointment":"There are currently no registered patients for this date!"
         }
     }
 }

@@ -1,0 +1,21 @@
+.manage-specialty-container{
+    padding: 0 15px;
+    .add-new-specialty{
+        .preview-img-specialty-container{
+            .btn .btn-info{
+                flex-direction: column;
+            }
+            .preview-image{
+                width: 150px;
+                height: 50px;
+                border: 1px solid #ddd;
+                background: center center no-repeat;
+                background-size: contain;
+                cursor: pointer; 
+            }
+        }
+        .btn-saveSpecialty{
+            margin: 15px 0;
+        }
+    }
+}

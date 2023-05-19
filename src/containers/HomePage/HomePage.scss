@@ -80,7 +80,7 @@
                     color: cornflowerblue;
                 }
                 &.section-handbook{
-                    background-image: url('../../assets/handbook/kham-mat-q7.jpg');
+                    // background-image: url('../../assets/handbook/kham-mat-q7.jpg');
                     cursor: pointer;
                     color: cornflowerblue;
                 }
@@ -208,6 +208,14 @@
 .clinic-name{
     cursor: pointer;
     padding: 10px 0;
+    &:hover{
+        color: cornflowerblue;
+    }
+}
+
+.handbook-name{
+    cursor: pointer;
+    padding: 15px 0;
     &:hover{
         color: cornflowerblue;
     }

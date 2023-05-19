@@ -1,0 +1,11 @@
+.detail-handbook-container{
+    .detail-handbook-body{
+        padding: 0 100px;
+        background-color: #fefcfc;
+        display: flex;
+        flex-direction: column;
+        .des-handbook{
+            padding: 5px 15px;
+        }
+    }
+}

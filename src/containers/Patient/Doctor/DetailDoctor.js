@@ -6,6 +6,9 @@ import {getDetailInfoDoctor} from '../../../services/userService'
 import {LANGUAGES} from "../../../utils"
 import DoctorSchedule from './DoctorSchedule';
 import DoctorExtraInfo from './DoctorExtraInfo';
+import LikeAndShare from '../SocialPlugin/LikeAndShare';
+import Comment from '../SocialPlugin/Comment';
+
 class DetailDoctor extends Component {
 
     constructor(props){

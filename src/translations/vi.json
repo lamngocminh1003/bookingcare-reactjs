@@ -116,6 +116,14 @@
         "profile-doctor":{
             "free-booking":"Miễn phí đặt lịch",
             "price":"GIÁ KHÁM: "
+        },
+        "remedy-modal":{
+            "title":"Gửi hóa đơn khám bệnh",
+            "send":"Gửi",
+            "cancel":"Hủy",
+            "choose-fee":"Chọn hóa đơn/ đơn thuốc",
+            "email":"Email bệnh nhân",
+            "firstName":"Tên bệnh nhân"
         }
     },
     "admin":{

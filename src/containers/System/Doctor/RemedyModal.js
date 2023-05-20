@@ -70,7 +70,7 @@ class RemedyModal extends Component {
                     >
                         <Button color="primary" onClick={this.toggle}>{this.props.buttonLabel}</Button>
                         <div className="modal-header">
-                            <h5 className="modal-title">Gửi hóa đơn khám bệnh</h5>
+                            <h5 className="modal-title"><FormattedMessage id="patient.remedy-modal.title" /> </h5>
                             <button type="button" className="close" aria-label="Close"
                             onClick={closeBookingModal}>
                                 <span aria-hidden="true">×</span>
@@ -79,7 +79,7 @@ class RemedyModal extends Component {
                         <ModalBody>
                             <div className='row '>
                                 <div className='col-6 form-group'>
-                                        <label>Tên bệnh nhân</label>
+                                        <label><FormattedMessage id="patient.remedy-modal.firstName" /></label>
                                         <input 
                                         className='form-control' 
                                         type="text"
@@ -87,7 +87,7 @@ class RemedyModal extends Component {
                                         />
                                 </div>
                                 <div className='col-6 form-group'>
-                                        <label>Email bệnh nhân</label>
+                                        <label><FormattedMessage id="patient.remedy-modal.email" /></label>
                                         <input 
                                         value={this.state.email}
                                         className='form-control' 
@@ -96,7 +96,7 @@ class RemedyModal extends Component {
                                         />
                                 </div>
                                 <div className='col-12 form-group'>
-                                        <label>Chọn hóa đơn</label>
+                                        <label><FormattedMessage id="patient.remedy-modal.choose-fee" /></label>
                                         <div className='preview-img-fee-container'>
                                             <input
                                             id="previewImg" 
@@ -121,8 +121,8 @@ class RemedyModal extends Component {
                             </div>
                         </ModalBody>
                         <ModalFooter>
-                            <Button color="primary" onClick={()=>this.handleSendRemedy()}>Send</Button>{' '}
-                            <Button color="secondary" onClick={closeBookingModal}>Cancel</Button>
+                            <Button color="primary" onClick={()=>this.handleSendRemedy()}><FormattedMessage id="patient.remedy-modal.send" /></Button>{' '}
+                            <Button color="secondary" onClick={closeBookingModal}><FormattedMessage id="patient.remedy-modal.cancel" /></Button>
                         </ModalFooter>
                     </Modal>
                 </div>                          

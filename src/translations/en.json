@@ -113,6 +113,14 @@
         "profile-doctor":{
             "free-booking":"Free booking",
             "price":"Price: "
+        },
+        "remedy-modal":{
+            "title":"Send medical bills",
+            "send":"Send",
+            "cancel":"Cancel",
+            "choose-fee":"Choose invoice/prescription",
+            "email":"Email's patient'",
+            "firstName":"Name's patient"
         }
     },
     "admin":{

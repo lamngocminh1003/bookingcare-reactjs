@@ -56,7 +56,7 @@ class VerifyEmail extends Component {
                     <body className='body'>
                     <div className="mainbox">
                     <i class="fas fa-calendar-check"></i>                    <div className="msg title">
-                            <p>Booking care xác nhận lịch hẹn của bạn đã thành công!</p>
+                            <p><FormattedMessage id="verifyEmail.success" /></p>
                         </div>
                     </div>
                     </body>
@@ -64,7 +64,7 @@ class VerifyEmail extends Component {
                     <body className='body'>
                         <div className="mainbox">
                         <i class="fas fa-frown"></i>                        <div className="msg title">
-                                <p>Booking care rất tiếc vì hiện tại lịch hẹn này tồn tại hoặc đã được xác nhận!</p>
+                                <p><FormattedMessage id="verifyEmail.error" /></p>
                             </div>
                         </div>
                     </body>

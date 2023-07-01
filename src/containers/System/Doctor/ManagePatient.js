@@ -104,6 +104,7 @@ class ManagePatient extends Component {
     render() {
         let {dataPatient,currentDate,isOpenRemedyModal,dataModal} = this.state
         let {language} = this.props
+        console.log('check dataPatient', dataPatient);
         return (
             <>
                 <LoadingOverlay

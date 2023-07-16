@@ -1,60 +1,205 @@
-.detail-specialty-container{
-    .des-specialty{
-        background-color: #fff !important;
-        padding: 10px;
-        margin: 15px 0;
-        box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
-        border-radius: 5px;
+/*Mobile: width <740px*/
+@media only screen and (max-width: 739px) {
+  .detail-specialty-container {
+    .des-specialty {
+      background-color: #fff !important;
+      padding: 10px;
+      margin: 15px 0;
+      box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
+      border-radius: 5px;
     }
-    .detail-specialty-body{
-        padding: 0 100px;
-        background-color: #eeeeee;
+    .detail-specialty-body {
+      padding: 0 20px !important;
+      background-color: #eeeeee;
+      display: flex;
+      flex-direction: column;
+      .search-sp-doctor {
+        .select {
+          height: 30px;
+          padding: 5px 8px;
+          border: none;
+          outline: none;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+      }
+    }
+    .each-doctor {
+      display: flex;
+      width: 100%;
+      min-height: 300px;
+      margin: 10px;
+      background-color: #fff;
+      box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
+      border-radius: 8px;
+      padding: 15px;
+      .dt-content-left {
+        width: 50%;
+        border-right: 1px solid #ddd;
+        padding: 0 20px 0 0 !important;
+        span {
+          display: none !important;
+        }
+      }
+      .dt-content-right {
+        padding: 10px;
+        width: 50%;
         display: flex;
         flex-direction: column;
-        .search-sp-doctor{
-            .select{
-                height: 30px;
-                padding: 5px 8px;
-                border: none;
-                outline: none;
-                border-radius: 3px;
-                cursor: pointer;
-            }
+        .doctor-schedule {
+          .doctor-schedule-container {
+            border-right: unset !important;
+          }
         }
-    
+        .doctor-extraInfo {
+          border-top: 1px solid #ddd;
+          margin-top: 10px;
+          padding-top: 10px;
+          .doctor-extra-info-container {
+            padding-left: 0 !important;
+            .short-info {
+              display: flex;
+              flex-direction: column;
+              span {
+                font-size: 12px;
+              }
+            }
+            .content-down {
+              .detail-info {
+                .price {
+                  .left {
+                    font-size: 12px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
-    .each-doctor{
+  }
+}
+/*PC: width >1330px*/
+@media only screen and (min-width: 1330px) {
+  .detail-specialty-container {
+    .des-specialty {
+      background-color: #fff !important;
+      padding: 10px;
+      margin: 15px 0;
+      box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
+      border-radius: 5px;
+    }
+    .detail-specialty-body {
+      padding: 0 100px;
+      background-color: #eeeeee;
+      display: flex;
+      flex-direction: column;
+      .search-sp-doctor {
+        .select {
+          height: 30px;
+          padding: 5px 8px;
+          border: none;
+          outline: none;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+      }
+    }
+    .each-doctor {
+      display: flex;
+      width: 100%;
+      min-height: 300px;
+      margin: 10px;
+      background-color: #fff;
+      box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
+      border-radius: 8px;
+      padding: 15px;
+      .dt-content-left {
+        width: 50%;
+        border-right: 1px solid #ddd;
+        padding: 0 20px 0 0 !important;
+      }
+      .dt-content-right {
+        padding: 10px;
+        width: 50%;
         display: flex;
-        width: 100%;
-        min-height: 300px;
-        margin: 10px;
-        background-color: #fff;
-        box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
-        border-radius: 8px;
-        padding: 15px;
-        .dt-content-left{
-            width: 50%;
-            border-right: 1px solid #ddd;
-            padding: 0 20px 0 0  !important;
+        flex-direction: column;
+        .doctor-schedule {
+          .doctor-schedule-container {
+            border-right: unset !important;
+          }
         }
-        .dt-content-right{
-            padding: 10px;
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            .doctor-schedule{
-                .doctor-schedule-container{
-                    border-right: unset !important;
-                }
-            }
-            .doctor-extraInfo{
-                border-top: 1px solid #ddd;
-                margin-top: 10px;
-                padding-top: 10px;
-                .doctor-extra-info-container{
-                    padding-left: 0 !important;
-                }
-            }
+        .doctor-extraInfo {
+          border-top: 1px solid #ddd;
+          margin-top: 10px;
+          padding-top: 10px;
+          .doctor-extra-info-container {
+            padding-left: 0 !important;
+          }
         }
+      }
     }
+  }
+}
+/*Tablet: width >=740px AND width< 1329*/
+@media only screen and (min-width: 740px) and (max-width: 1329px) {
+  .detail-specialty-container {
+    .des-specialty {
+      background-color: #fff !important;
+      padding: 10px;
+      margin: 15px 0;
+      box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
+      border-radius: 5px;
+    }
+    .detail-specialty-body {
+      padding: 0 100px;
+      background-color: #eeeeee;
+      display: flex;
+      flex-direction: column;
+      .search-sp-doctor {
+        .select {
+          height: 30px;
+          padding: 5px 8px;
+          border: none;
+          outline: none;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+      }
+    }
+    .each-doctor {
+      display: flex;
+      width: 100%;
+      min-height: 300px;
+      margin: 10px;
+      background-color: #fff;
+      box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
+      border-radius: 8px;
+      padding: 15px;
+      .dt-content-left {
+        width: 50%;
+        border-right: 1px solid #ddd;
+        padding: 0 20px 0 0 !important;
+      }
+      .dt-content-right {
+        padding: 10px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        .doctor-schedule {
+          .doctor-schedule-container {
+            border-right: unset !important;
+          }
+        }
+        .doctor-extraInfo {
+          border-top: 1px solid #ddd;
+          margin-top: 10px;
+          padding-top: 10px;
+          .doctor-extra-info-container {
+            padding-left: 0 !important;
+          }
+        }
+      }
+    }
+  }
 }

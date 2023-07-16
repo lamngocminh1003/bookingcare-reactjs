@@ -1,11 +1,49 @@
-.detail-handbook-container{
-    .detail-handbook-body{
-        padding: 0 100px;
-        background-color: #fefcfc;
-        display: flex;
-        flex-direction: column;
-        .des-handbook{
-            padding: 5px 15px;
+@media only screen and (min-width: 740px) and (max-width: 1329px) {
+  .detail-handbook-container {
+    .detail-handbook-body {
+      padding: 0 30px;
+      background-color: #fefcfc;
+      display: flex;
+      flex-direction: column;
+      .des-handbook {
+        padding: 5px 15px;
+        img {
+          height: 380px;
+          display: block;
+          margin: 0 auto;
         }
+      }
     }
+  }
+}
+@media only screen and (min-width: 1330px) {
+  .detail-handbook-container {
+    .detail-handbook-body {
+      padding: 0 100px;
+      background-color: #fefcfc;
+      display: flex;
+      flex-direction: column;
+      .des-handbook {
+        padding: 5px 15px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 739px) {
+  .detail-handbook-container {
+    .detail-handbook-body {
+      padding: 0 10px;
+      background-color: #fefcfc;
+      display: flex;
+      flex-direction: column;
+      .des-handbook {
+        padding: 5px 15px;
+        img {
+          height: 180px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
 }

@@ -1,4 +1,34 @@
-.slick-prev{
+/*Mobile: width <740px*/
+@media only screen and (max-width: 739px) {
+  .slick-prev {
+    left: -10px !important;
+    z-index: 4 !important;
+    height: 48px !important;
+    width: 44px !important;
+    background: #fff !important;
+    border: 2px solid #e4e0e0 !important;
+    border-radius: 2px;
+    &:hover {
+      background: #ece6e6 !important;
+    }
+  }
+  .slick-next {
+    right: -10px !important;
+    z-index: 4 !important;
+    height: 48px !important;
+    width: 44px !important;
+    background: #fff !important;
+    border: 2px solid #e4e0e0 !important;
+    border-radius: 2px;
+
+    &:hover {
+      background: #ece6e6 !important;
+    }
+  }
+}
+/*PC: width >1330px*/
+@media only screen and (min-width: 1330px) {
+  .slick-prev {
     left: -30px !important;
     z-index: 4 !important;
     height: 48px !important;
@@ -6,12 +36,12 @@
     background: #fff !important;
     border: 2px solid #e4e0e0 !important;
     border-radius: 2px;
-    &:hover{
-        background: #ece6e6 !important;
+    &:hover {
+      background: #ece6e6 !important;
     }
-}
-.slick-next{
-    right:  -30px !important;
+  }
+  .slick-next {
+    right: -30px !important;
     z-index: 4 !important;
     height: 48px !important;
     width: 44px !important;
@@ -19,204 +49,651 @@
     border: 2px solid #e4e0e0 !important;
     border-radius: 2px;
 
-    &:hover{
-        background: #ece6e6  !important;
+    &:hover {
+      background: #ece6e6 !important;
     }
+  }
 }
-.slick-disabled{
-    display: none !important;
-}
-.slick-next:before,.slick-prev:before{
-    font-family: FontAwesome !important;
-    color: rgb(30, 30, 183) !important;
+/*Tablet: width >=740px AND width< 1329*/
+@media only screen and (min-width: 740px) and (max-width: 1329px) {
+  .slick-prev {
+    left: -10px !important;
+    z-index: 4 !important;
+    height: 48px !important;
+    width: 44px !important;
+    background: #fff !important;
+    border: 2px solid #e4e0e0 !important;
+    border-radius: 2px;
+    &:hover {
+      background: #ece6e6 !important;
+    }
+  }
+  .slick-next {
+    right: -10px !important;
+    z-index: 4 !important;
+    height: 48px !important;
+    width: 44px !important;
+    background: #fff !important;
+    border: 2px solid #e4e0e0 !important;
+    border-radius: 2px;
+
+    &:hover {
+      background: #ece6e6 !important;
+    }
+  }
 }
 
-.section-share {
-    &.section-specialty{
-        background-color: #f5f5f5;
-    }
-    &.section-outstanding-doctor{
-        background-color: #f5f5f5;
-    }
-    &.section-about{
-        height: 500px !important;
-        border-top:4px solid #f5f5f5;
-        border-bottom:4px solid #f5f5f5;
-    }
-    .section-body{
-        .section-customize{
-            .bg-image{
-                height: 150px;
-                width: 278px;
-                background-position: center center;
-                background-repeat: no-repeat !important;
-                background-size: cover;
-                background-color: #eee;
-                &.section-specialty{
-                    // background-image: url('../../assets/specialty/co-xuong-khop.jpg');
-                    margin: 0 auto;
-                    margin-bottom: 10px;
-                    cursor: pointer;
-                    color: cornflowerblue;
-                }
-                &.section-medical-facility{
-                    // background-image: url('../../assets/medical-facility/thucuc.png');
-                    margin: 0 auto;
-                    margin-bottom: 10px;
-                    cursor: pointer;
-                    color: cornflowerblue;
-                }
-                &.section-outstanding-doctor{
-                    // background-image: url('../../assets/outstanding-doctor/anh-dai-dien-bs.jpg');
-                    width: 120px;
-                    height: 120px;
-                    margin: 0 auto;
-                    margin-bottom: 10px;
-                    border-radius: 50%;
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    cursor: pointer;
-                    color: cornflowerblue;
-                }
-                &.section-handbook{
-                    // background-image: url('../../assets/handbook/kham-mat-q7.jpg');
-                    cursor: pointer;
-                    color: cornflowerblue;
-                }
-            }
-        }
-    }
+.slick-disabled {
+  display: none !important;
 }
-.specialty-child{
-    cursor: pointer;
-    .specialty-name{
-        padding: 10px 0;
-        &:hover{
-            color: cornflowerblue;
-        }
-    }
-}
-.specialty-child{
-    cursor: pointer;
-    .clinic-name{
-        padding: 10px 0;
-        cursor: pointer;
-        &:hover{
-            color: cornflowerblue;
-        }
-    }
+.slick-next:before,
+.slick-prev:before {
+  font-family: FontAwesome !important;
+  color: rgb(30, 30, 183) !important;
 }
 
-.section-share{
-    height: 330px;
-    .section-container{
-        margin: 0 105px;
-        .section-header{
-            display: flex;
-            height: 60px;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: row;
-            margin: 20px 0;
-            .title-section{
-                font-size: 22px;
-                font-weight: 600;
-            }
-            .btn-section{
-                padding: 10px 15px;
-                border: none;
-                border-radius: 2px;
-                outline: none;
-                background: #ebebeb;
-                color: black;
-                text-transform: uppercase;
-                &:hover{
-                    color: #fff;
-                    background: #f7d800;
-                }
-            }
-        }
+/*Mobile: width <740px*/
+@media only screen and (max-width: 739px) {
+  .section-share {
+    &.section-specialty {
+      background-color: #f5f5f5;
+      height: 170px !important;
     }
-}
-
-.section-outstanding-doctor{
-    .outer-bg{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 10px;
+    &.section-outstanding-doctor {
+      background-color: #f5f5f5;
+      height: 260px !important;
     }
-    .section-customize{
-        padding: 5px;
-        .customize-border{
-            padding: 5px;
+    &.section-clinic {
+      height: 170px !important;
+    }
+    &.section-handbook {
+      height: 200px !important;
+    }
+    &.section-about {
+      height: 500px !important;
+      border-top: 4px solid #f5f5f5;
+      border-bottom: 4px solid #f5f5f5;
+    }
+    .section-body {
+      .section-customize {
+        .bg-image {
+          height: 50px;
+          width: 100px;
+          background-position: center center;
+          background-repeat: no-repeat !important;
+          background-size: cover;
+          background-color: #eee;
+          &.section-specialty {
+            // background-image: url('../../assets/specialty/co-xuong-khop.jpg');
+            margin: 0 auto;
+            margin-bottom: 10px;
             cursor: pointer;
-            &:hover{
-                color: cornflowerblue;
-            }
-        }
-    }
-}
-
-.section-clinic{
-    &.outer-bg{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-    &.section-customize{
-        padding: 5px;
-        .customize-border{
-            padding: 5px;
+            color: cornflowerblue;
+          }
+          &.section-medical-facility {
+            // background-image: url('../../assets/medical-facility/thucuc.png');
+            margin: 0 auto;
+            margin-bottom: 10px;
             cursor: pointer;
-            &:hover{
-                color: cornflowerblue;
-            }
+            color: cornflowerblue;
+          }
+          &.section-outstanding-doctor {
+            // background-image: url('../../assets/outstanding-doctor/anh-dai-dien-bs.jpg');
+            width: 110px;
+            height: 90px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            color: cornflowerblue;
+          }
+          &.section-handbook {
+            // background-image: url('../../assets/handbook/kham-mat-q7.jpg');
+            cursor: pointer;
+            color: cornflowerblue;
+          }
         }
+      }
     }
-}
+  }
+  .specialty-child {
+    cursor: pointer;
+    .specialty-name {
+      padding: 10px 0;
+      &:hover {
+        color: cornflowerblue;
+      }
+    }
+  }
+  .specialty-child {
+    cursor: pointer;
+    .clinic-name {
+      padding: 10px 0;
+      cursor: pointer;
+      &:hover {
+        color: cornflowerblue;
+      }
+    }
+  }
 
-.home-footer{
-    text-align: center;
-    padding-top: 8px;
-    a{
-        text-decoration: none;
-        color: black;
-    }
-}
-.section-about{
-    padding: 0 100px;
-    .section-about-header{
-        padding: 20px 10px;
-        font-size: 22px;
-        font-weight: 600;
-    }
-    .section-about-content{
+  .section-share {
+    height: 280px;
+    .section-container {
+      margin: 0 10px;
+      .section-header {
         display: flex;
-        gap: 15px;
+        height: 50px;
+        justify-content: space-between;
         align-items: center;
-        .content-left{
-            width: 60%;
+        flex-direction: row;
+        margin: 20px 0 0 0;
+        .title-section {
+          font-size: 16px;
+          font-weight: 600;
         }
-        .content-right{
-            width: 40%;
-            font-style: italic;
-            text-align: justify;
+        .btn-section {
+          padding: 6px 10px;
+          border: none;
+          border-radius: 2px;
+          outline: none;
+          background: #ebebeb;
+          color: black;
+          text-transform: uppercase;
+          font-size: 10px;
+          &:hover {
+            color: #fff;
+            background: #f7d800;
+          }
         }
+      }
     }
-}
-.clinic-name{
+  }
+
+  .section-outstanding-doctor {
+    .outer-bg {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5px;
+    }
+    .section-customize {
+      padding: 5px;
+      .customize-border {
+        padding: 5px;
+        cursor: pointer;
+        &:hover {
+          color: cornflowerblue;
+        }
+      }
+    }
+  }
+
+  .section-clinic {
+    &.outer-bg {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5px;
+    }
+    &.section-customize {
+      padding: 5px;
+      .customize-border {
+        padding: 5px;
+        cursor: pointer;
+        &:hover {
+          color: cornflowerblue;
+        }
+      }
+    }
+  }
+
+  .home-footer {
+    text-align: center;
+    padding: 10px 8px 0 8px;
+    p {
+      font-size: 13px;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  .section-about {
+    padding: 0 15px;
+    .section-about-header {
+      padding: 50px 10px 10px 10px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .section-about-content {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      .content-left {
+        width: 100%;
+        height: 50px;
+      }
+      .content-right {
+        width: 50%;
+        font-style: italic;
+        text-align: justify;
+        font-size: 12px;
+        display: none;
+      }
+    }
+  }
+  .clinic-name {
     cursor: pointer;
     padding: 10px 0;
-    &:hover{
-        color: cornflowerblue;
+    &:hover {
+      color: cornflowerblue;
     }
-}
+  }
 
-.handbook-name{
+  .handbook-name {
+    cursor: pointer;
+    margin: 0 0 50px 0;
+    font-size: 12px;
+    &:hover {
+      color: cornflowerblue;
+    }
+  }
+}
+/*PC: width >1330px*/
+@media only screen and (min-width: 1330px) {
+  .section-share {
+    &.section-specialty {
+      background-color: #f5f5f5;
+    }
+    &.section-outstanding-doctor {
+      background-color: #f5f5f5;
+    }
+    &.section-about {
+      height: 500px !important;
+      border-top: 4px solid #f5f5f5;
+      border-bottom: 4px solid #f5f5f5;
+    }
+    .section-body {
+      .section-customize {
+        .bg-image {
+          height: 150px;
+          width: 278px;
+          background-position: center center;
+          background-repeat: no-repeat !important;
+          background-size: cover;
+          background-color: #eee;
+          &.section-specialty {
+            // background-image: url('../../assets/specialty/co-xuong-khop.jpg');
+            margin: 0 auto;
+            margin-bottom: 10px;
+            cursor: pointer;
+            color: cornflowerblue;
+          }
+          &.section-medical-facility {
+            // background-image: url('../../assets/medical-facility/thucuc.png');
+            margin: 0 auto;
+            margin-bottom: 10px;
+            cursor: pointer;
+            color: cornflowerblue;
+          }
+          &.section-outstanding-doctor {
+            // background-image: url('../../assets/outstanding-doctor/anh-dai-dien-bs.jpg');
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            color: cornflowerblue;
+          }
+          &.section-handbook {
+            // background-image: url('../../assets/handbook/kham-mat-q7.jpg');
+            cursor: pointer;
+            color: cornflowerblue;
+          }
+        }
+      }
+    }
+  }
+  .specialty-child {
+    cursor: pointer;
+    .specialty-name {
+      padding: 10px 0;
+      &:hover {
+        color: cornflowerblue;
+      }
+    }
+  }
+  .specialty-child {
+    cursor: pointer;
+    .clinic-name {
+      padding: 10px 0;
+      cursor: pointer;
+      &:hover {
+        color: cornflowerblue;
+      }
+    }
+  }
+
+  .section-share {
+    height: 330px;
+    .section-container {
+      margin: 0 105px;
+      .section-header {
+        display: flex;
+        height: 60px;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        margin: 20px 0 0 0;
+        .title-section {
+          font-size: 22px;
+          font-weight: 600;
+        }
+        .btn-section {
+          padding: 10px 15px;
+          border: none;
+          border-radius: 2px;
+          outline: none;
+          background: #ebebeb;
+          color: black;
+          text-transform: uppercase;
+          &:hover {
+            color: #fff;
+            background: #f7d800;
+          }
+        }
+      }
+    }
+  }
+
+  .section-outstanding-doctor {
+    .outer-bg {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .section-customize {
+      padding: 5px;
+      .customize-border {
+        padding: 5px;
+        cursor: pointer;
+        &:hover {
+          color: cornflowerblue;
+        }
+      }
+    }
+  }
+
+  .section-clinic {
+    &.outer-bg {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    &.section-customize {
+      padding: 5px;
+      .customize-border {
+        padding: 5px;
+        cursor: pointer;
+        &:hover {
+          color: cornflowerblue;
+        }
+      }
+    }
+  }
+
+  .home-footer {
+    text-align: center;
+    padding-top: 8px;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .section-about {
+    padding: 0 100px;
+    .section-about-header {
+      padding: 20px 10px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+    .section-about-content {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      .content-left {
+        width: 60%;
+      }
+      .content-right {
+        width: 40%;
+        font-style: italic;
+        text-align: justify;
+      }
+    }
+  }
+  .clinic-name {
+    cursor: pointer;
+    padding: 10px 0;
+    &:hover {
+      color: cornflowerblue;
+    }
+  }
+
+  .handbook-name {
     cursor: pointer;
     padding: 15px 0;
-    &:hover{
-        color: cornflowerblue;
+    &:hover {
+      color: cornflowerblue;
     }
+  }
+}
+/*Tablet: width >=740px AND width< 1329*/
+@media only screen and (min-width: 740px) and (max-width: 1329px) {
+  .section-share {
+    &.section-specialty {
+      background-color: #f5f5f5;
+      height: 170px !important;
+    }
+    &.section-outstanding-doctor {
+      background-color: #f5f5f5;
+      height: 260px !important;
+    }
+    &.section-clinic {
+      height: 170px !important;
+    }
+    &.section-handbook {
+      height: 200px !important;
+    }
+    &.section-about {
+      height: 500px !important;
+      border-top: 4px solid #f5f5f5;
+      border-bottom: 4px solid #f5f5f5;
+    }
+    .section-body {
+      .section-customize {
+        .bg-image {
+          height: 120px;
+          width: 170px;
+          background-position: center center;
+          background-repeat: no-repeat !important;
+          background-size: cover;
+          background-color: #eee;
+          &.section-specialty {
+            // background-image: url('../../assets/specialty/co-xuong-khop.jpg');
+            margin: 0 auto;
+            margin-bottom: 10px;
+            cursor: pointer;
+            color: cornflowerblue;
+          }
+          &.section-medical-facility {
+            // background-image: url('../../assets/medical-facility/thucuc.png');
+            margin: 0 auto;
+            margin-bottom: 10px;
+            cursor: pointer;
+            color: cornflowerblue;
+          }
+          &.section-outstanding-doctor {
+            // background-image: url('../../assets/outstanding-doctor/anh-dai-dien-bs.jpg');
+            width: 130px;
+            height: 130px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            color: cornflowerblue;
+          }
+          &.section-handbook {
+            // background-image: url('../../assets/handbook/kham-mat-q7.jpg');
+            cursor: pointer;
+            color: cornflowerblue;
+          }
+        }
+      }
+    }
+  }
+  .specialty-child {
+    cursor: pointer;
+    .specialty-name {
+      padding: 10px 0;
+      &:hover {
+        color: cornflowerblue;
+      }
+    }
+  }
+  .specialty-child {
+    cursor: pointer;
+    .clinic-name {
+      padding: 10px 0;
+      cursor: pointer;
+      &:hover {
+        color: cornflowerblue;
+      }
+    }
+  }
+
+  .section-share {
+    height: 280px;
+    .section-container {
+      margin: 0 10px;
+      .section-header {
+        display: flex;
+        height: 50px;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        margin: 20px 0 0 0;
+        .title-section {
+          font-size: 16px;
+          font-weight: 600;
+        }
+        .btn-section {
+          padding: 6px 10px;
+          border: none;
+          border-radius: 2px;
+          outline: none;
+          background: #ebebeb;
+          color: black;
+          text-transform: uppercase;
+          font-size: 10px;
+          &:hover {
+            color: #fff;
+            background: #f7d800;
+          }
+        }
+      }
+    }
+  }
+
+  .section-outstanding-doctor {
+    .outer-bg {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5px;
+    }
+    .section-customize {
+      padding: 5px;
+      .customize-border {
+        padding: 5px;
+        cursor: pointer;
+        &:hover {
+          color: cornflowerblue;
+        }
+      }
+    }
+  }
+
+  .section-clinic {
+    &.outer-bg {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5px;
+    }
+    &.section-customize {
+      padding: 5px;
+      .customize-border {
+        padding: 5px;
+        cursor: pointer;
+        &:hover {
+          color: cornflowerblue;
+        }
+      }
+    }
+  }
+
+  .home-footer {
+    text-align: center;
+    padding: 10px 8px 0 8px;
+    p {
+      font-size: 13px;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  .section-about {
+    padding: 0 15px;
+    .section-about-header {
+      padding: 30px 10px 10px 10px;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .section-about-content {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      flex-direction: row;
+      .content-left {
+        width: 60%;
+      }
+      .content-right {
+        width: 40%;
+        font-style: italic;
+        text-align: justify;
+        font-size: 16px;
+      }
+    }
+  }
+  .clinic-name {
+    cursor: pointer;
+    padding: 10px 0;
+    &:hover {
+      color: cornflowerblue;
+    }
+  }
+
+  .handbook-name {
+    cursor: pointer;
+    margin: 0 0 50px 0;
+    font-size: 12px;
+    &:hover {
+      color: cornflowerblue;
+    }
+  }
 }

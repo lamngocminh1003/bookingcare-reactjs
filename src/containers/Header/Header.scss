@@ -1,6 +1,57 @@
 @import "../../styles/common.scss";
 
-.header-container {
+@media only screen and (max-width: 739px) {
+  .header-container {
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    background-color: $colormain;
+    color: $common-text-color;
+    height: 80px;
+    position: relative;
+    .btn-logout {
+      color: $common-text-color;
+      line-height: 40px;
+      height: 40px;
+      padding: 0 10px;
+      &:hover {
+        background-color: darken($colormain, 5);
+      }
+      i {
+        font-size: $base-size - 5px;
+      }
+    }
+    .languages {
+      font-size: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+      padding: 0 -2px;
+      .welcome {
+        margin: 20px 5px;
+      }
+      .two-languages {
+        display: flex;
+        gap: 5px;
+        .language-en {
+          cursor: pointer;
+          &.active {
+            color: rgb(0, 255, 85);
+          }
+        }
+        .language-vi {
+          cursor: pointer;
+          &.active {
+            color: orange;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1330px) {
+  .header-container {
     z-index: 99;
     display: flex;
     justify-content: space-between;
@@ -9,33 +60,75 @@
     height: 40px;
     position: relative;
     .btn-logout {
-        color: $common-text-color;
-        line-height: 40px;
-        height: 40px;
-        padding: 0 10px;
-        &:hover {
-            background-color: darken($colormain, 5);
-        }
-        i {
-            font-size: $base-size + 1px;
-        }
+      color: $common-text-color;
+      line-height: 40px;
+      height: 40px;
+      padding: 0 10px;
+      &:hover {
+        background-color: darken($colormain, 5);
+      }
+      i {
+        font-size: $base-size + 1px;
+      }
     }
-    .languages{
-        .welcome{
-            margin-right: 10px;
+    .languages {
+      .welcome {
+        margin-right: 10px;
+      }
+      .language-en {
+        margin: 0 15px 0 10px;
+        cursor: pointer;
+        &.active {
+          color: rgb(0, 255, 85);
         }
-        .language-en{
-            margin: 0 15px 0 10px;
-            cursor: pointer;
-            &.active{
-                color: rgb(0, 255, 85);
-            }
+      }
+      .language-vi {
+        cursor: pointer;
+        &.active {
+          color: orange;
         }
-        .language-vi{
-            cursor: pointer;
-            &.active{
-                color: orange;
-            }
-        }
+      }
     }
+  }
+}
+@media only screen and (min-width: 740px) and (max-width: 1329px) {
+  .header-container {
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    background-color: $colormain;
+    color: $common-text-color;
+    height: 40px;
+    position: relative;
+    .btn-logout {
+      color: $common-text-color;
+      line-height: 40px;
+      height: 40px;
+      padding: 0 10px;
+      &:hover {
+        background-color: darken($colormain, 5);
+      }
+      i {
+        font-size: $base-size + 1px;
+      }
+    }
+    .languages {
+      .welcome {
+        margin-right: 10px;
+      }
+      .language-en {
+        margin: 0 15px 0 10px;
+        cursor: pointer;
+        &.active {
+          color: rgb(0, 255, 85);
+        }
+      }
+      .language-vi {
+        cursor: pointer;
+        &.active {
+          color: orange;
+        }
+      }
+    }
+  }
 }

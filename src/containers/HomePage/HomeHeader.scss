@@ -393,7 +393,7 @@
   .home-header-container {
     height: 70px;
     width: 100%;
-    padding: 0 5px;
+    padding: 0 10px;
     top: 0;
     position: sticky;
     background-color: white;
@@ -403,20 +403,21 @@
       height: 100%;
       display: flex;
       .left-content {
-        width: 12%;
+        width: 50%;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 5px;
         .header_logo {
           img {
             height: 100%;
             width: 100%;
             cursor: pointer;
-            transform: scale(0.85, 0.85);
           }
         }
         i {
-          font-size: 10px;
+          padding: 0 10px;
+          font-size: 20px;
           color: cadetblue;
           cursor: pointer;
         }
@@ -426,6 +427,7 @@
         display: flex;
         justify-content: space-between;
         align-self: center;
+        display: none;
         .child-content {
           b {
             font-size: 10px;
@@ -437,16 +439,17 @@
         }
       }
       .right-content {
-        width: 20%;
+        width: 50%;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         gap: 5px;
+        padding: 0 30px;
         .support {
           display: flex;
           align-items: center;
           cursor: pointer;
-          font-size: 8px;
+          font-size: 12px;
           i {
             font-size: 12px;
             margin-right: 5px;
@@ -458,7 +461,7 @@
           .language-vi {
             cursor: pointer;
             opacity: 0.3;
-            font-size: 8px;
+            font-size: 12px;
             &.active {
               opacity: 1;
               span {
@@ -472,7 +475,7 @@
           .language-en {
             cursor: pointer;
             opacity: 0.3;
-            font-size: 8px;
+            font-size: 12px;
             &.active {
               opacity: 1;
               span {
@@ -505,14 +508,14 @@
       padding-top: 70px;
       .title1 {
         text-align: center;
-        font-size: 16px;
+        font-size: 20px;
         color: white;
         text-shadow: 1px 1px 1px #333;
         margin: 30px 0 5px 0;
       }
       .title2 {
         text-align: center;
-        font-size: 16px;
+        font-size: 20px;
         color: white;
         text-shadow: 1px 1px 1px #333;
         margin-bottom: 15px;

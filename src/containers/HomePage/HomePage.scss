@@ -13,7 +13,7 @@
     }
   }
   .slick-next {
-    right: 0px !important;
+    right: 5px !important;
     z-index: 4 !important;
     height: 30px !important;
     width: 25px !important;
@@ -186,6 +186,7 @@
     .section-container {
       margin: 0 10px;
       .section-header {
+        padding: 0 20px;
         display: flex;
         height: 50px;
         justify-content: space-between;

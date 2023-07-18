@@ -1,10 +1,10 @@
 /*Mobile: width <740px*/
 @media only screen and (max-width: 739px) {
   .slick-prev {
-    left: -10px !important;
+    left: -5px !important;
     z-index: 4 !important;
-    height: 48px !important;
-    width: 44px !important;
+    height: 30px !important;
+    width: 25px !important;
     background: #fff !important;
     border: 2px solid #e4e0e0 !important;
     border-radius: 2px;
@@ -13,10 +13,10 @@
     }
   }
   .slick-next {
-    right: -10px !important;
+    right: -5px !important;
     z-index: 4 !important;
-    height: 48px !important;
-    width: 44px !important;
+    height: 30px !important;
+    width: 25px !important;
     background: #fff !important;
     border: 2px solid #e4e0e0 !important;
     border-radius: 2px;
@@ -57,7 +57,7 @@
 /*Tablet: width >=740px AND width< 1329*/
 @media only screen and (min-width: 740px) and (max-width: 1329px) {
   .slick-prev {
-    left: -10px !important;
+    left: -5px !important;
     z-index: 4 !important;
     height: 48px !important;
     width: 44px !important;
@@ -69,7 +69,7 @@
     }
   }
   .slick-next {
-    right: -10px !important;
+    right: -5px !important;
     z-index: 4 !important;
     height: 48px !important;
     width: 44px !important;
@@ -90,6 +90,7 @@
 .slick-prev:before {
   font-family: FontAwesome !important;
   color: rgb(30, 30, 183) !important;
+  font-size: 11px !important;
 }
 
 /*Mobile: width <740px*/
@@ -101,13 +102,13 @@
     }
     &.section-outstanding-doctor {
       background-color: #f5f5f5;
-      height: 260px !important;
+      height: 210px !important;
     }
     &.section-clinic {
       height: 170px !important;
     }
     &.section-handbook {
-      height: 200px !important;
+      height: 225px !important;
     }
     &.section-about {
       height: 500px !important;
@@ -123,6 +124,7 @@
           background-repeat: no-repeat !important;
           background-size: cover;
           background-color: #eee;
+
           &.section-specialty {
             // background-image: url('../../assets/specialty/co-xuong-khop.jpg');
             margin: 0 auto;
@@ -139,8 +141,8 @@
           }
           &.section-outstanding-doctor {
             // background-image: url('../../assets/outstanding-doctor/anh-dai-dien-bs.jpg');
-            width: 110px;
-            height: 90px;
+            width: 90px;
+            height: 75px;
             margin: 0 auto;
             margin-bottom: 10px;
             border-radius: 50%;
@@ -223,6 +225,12 @@
       .customize-border {
         padding: 5px;
         cursor: pointer;
+        .text {
+          font-size: 12px;
+        }
+        div {
+          font-size: 12px;
+        }
         &:hover {
           color: cornflowerblue;
         }
@@ -284,7 +292,8 @@
   }
   .clinic-name {
     cursor: pointer;
-    padding: 10px 0;
+    padding: 10px 5px;
+    font-size: 12px;
     &:hover {
       color: cornflowerblue;
     }
@@ -294,6 +303,7 @@
     cursor: pointer;
     margin: 0 0 50px 0;
     font-size: 12px;
+    padding: 10px 5px;
     &:hover {
       color: cornflowerblue;
     }
@@ -496,14 +506,14 @@
   .section-share {
     &.section-specialty {
       background-color: #f5f5f5;
-      height: 170px !important;
+      height: 220px !important;
     }
     &.section-outstanding-doctor {
       background-color: #f5f5f5;
       height: 260px !important;
     }
     &.section-clinic {
-      height: 170px !important;
+      height: 220px !important;
     }
     &.section-handbook {
       height: 200px !important;

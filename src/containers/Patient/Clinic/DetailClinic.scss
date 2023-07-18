@@ -1,64 +1,64 @@
-.detail-specialty-container{
-    .des-specialty{
-        background-color: #fff !important;
-        padding: 10px;
-        margin: 15px 0;
-        box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
-        border-radius: 5px;
+@media only screen and (max-width: 739px) {
+  .detail-specialty-container {
+    .des-specialty {
+      background-color: #fff !important;
+      padding: 10px;
+      margin: 15px 0;
+      box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
+      border-radius: 5px;
     }
-    .detail-specialty-body{
-        padding: 0 100px;
-        background-color: #eeeeee;
+    .detail-specialty-body {
+      padding: 0 100px;
+      background-color: #eeeeee;
+      display: flex;
+      flex-direction: column;
+      .search-sp-doctor {
+        .select {
+          height: 30px;
+          padding: 5px 8px;
+          border: none;
+          outline: none;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+      }
+    }
+    .each-doctor {
+      display: flex;
+      width: 100%;
+      min-height: 300px;
+      margin: 10px;
+      background-color: #fff;
+      box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
+      border-radius: 8px;
+      padding: 15px;
+      .dt-content-left {
+        width: 50%;
+        border-right: 1px solid #ddd;
+        padding: 0 20px 0 0 !important;
+      }
+      .dt-content-right {
+        padding: 10px;
+        width: 50%;
         display: flex;
         flex-direction: column;
-        .search-sp-doctor{
-            .select{
-                height: 30px;
-                padding: 5px 8px;
-                border: none;
-                outline: none;
-                border-radius: 3px;
-                cursor: pointer;
-            }
+        .doctor-schedule {
+          .doctor-schedule-container {
+            border-right: unset !important;
+          }
         }
-    
+        .doctor-extraInfo {
+          border-top: 1px solid #ddd;
+          margin-top: 10px;
+          padding-top: 10px;
+          .doctor-extra-info-container {
+            padding-left: 0 !important;
+          }
+        }
+      }
     }
-    .each-doctor{
-        display: flex;
-        width: 100%;
-        min-height: 300px;
-        margin: 10px;
-        background-color: #fff;
-        box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
-        border-radius: 8px;
-        padding: 15px;
-        .dt-content-left{
-            width: 50%;
-            border-right: 1px solid #ddd;
-            padding: 0 20px 0 0  !important;
-        }
-        .dt-content-right{
-            padding: 10px;
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            .doctor-schedule{
-                .doctor-schedule-container{
-                    border-right: unset !important;
-                }
-            }
-            .doctor-extraInfo{
-                border-top: 1px solid #ddd;
-                margin-top: 10px;
-                padding-top: 10px;
-                .doctor-extra-info-container{
-                    padding-left: 0 !important;
-                }
-            }
-        }
-    }
-}
-.info-clinic{
+  }
+  .info-clinic {
     border-bottom: 2px solid #ddd;
     padding: 10px 10px;
     margin-bottom: 15px;
@@ -66,35 +66,238 @@
     gap: 20px;
     justify-content: flex-start;
     align-items: center;
-    .image-clinic{
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 180px;
-        height: 100px;
-        border:1px solid #ddd;
+    .image-clinic {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 180px;
+      height: 100px;
+      border: 1px solid #ddd;
     }
-    .clinic-name-address{
+    .clinic-name-address {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .name-clinic {
+        font-size: 22px;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .address-clinic {
+        font-size: 16px;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        .fas {
+          color: lightskyblue;
+          font-size: 17px;
+        }
+      }
+    }
+  }
+  .des-clinic {
+    padding: 5px 15px;
+  }
+}
+@media only screen and (min-width: 740px) and (max-width: 1329px) {
+  .detail-specialty-container {
+    .des-specialty {
+      background-color: #fff !important;
+      padding: 10px;
+      margin: 15px 0;
+      box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
+      border-radius: 5px;
+    }
+    .detail-specialty-body {
+      padding: 0 100px;
+      background-color: #eeeeee;
+      display: flex;
+      flex-direction: column;
+      .search-sp-doctor {
+        .select {
+          height: 30px;
+          padding: 5px 8px;
+          border: none;
+          outline: none;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+      }
+    }
+    .each-doctor {
+      display: flex;
+      width: 100%;
+      min-height: 300px;
+      margin: 10px;
+      background-color: #fff;
+      box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
+      border-radius: 8px;
+      padding: 15px;
+      .dt-content-left {
+        width: 50%;
+        border-right: 1px solid #ddd;
+        padding: 0 20px 0 0 !important;
+      }
+      .dt-content-right {
+        padding: 10px;
+        width: 50%;
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        .name-clinic{
-            font-size: 22px;
-            text-transform: uppercase;
-            font-weight: 600;
+        .doctor-schedule {
+          .doctor-schedule-container {
+            border-right: unset !important;
+          }
         }
-        .address-clinic{
-            font-size: 16px;
-            display: flex;
-            gap: 5px;
-            align-items: center;
-            .fas{
-                color: lightskyblue;
-                font-size: 17px;
-            }
+        .doctor-extraInfo {
+          border-top: 1px solid #ddd;
+          margin-top: 10px;
+          padding-top: 10px;
+          .doctor-extra-info-container {
+            padding-left: 0 !important;
+          }
         }
+      }
     }
-}
-.des-clinic{
+  }
+  .info-clinic {
+    border-bottom: 2px solid #ddd;
+    padding: 10px 10px;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    .image-clinic {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 180px;
+      height: 100px;
+      border: 1px solid #ddd;
+    }
+    .clinic-name-address {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .name-clinic {
+        font-size: 22px;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .address-clinic {
+        font-size: 16px;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        .fas {
+          color: lightskyblue;
+          font-size: 17px;
+        }
+      }
+    }
+  }
+  .des-clinic {
     padding: 5px 15px;
+  }
+}
+@media only screen and (min-width: 1330px) {
+  .detail-specialty-container {
+    .des-specialty {
+      background-color: #fff !important;
+      padding: 10px;
+      margin: 15px 0;
+      box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
+      border-radius: 5px;
+    }
+    .detail-specialty-body {
+      padding: 0 100px;
+      background-color: #eeeeee;
+      display: flex;
+      flex-direction: column;
+      .search-sp-doctor {
+        .select {
+          height: 30px;
+          padding: 5px 8px;
+          border: none;
+          outline: none;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+      }
+    }
+    .each-doctor {
+      display: flex;
+      width: 100%;
+      min-height: 300px;
+      margin: 10px;
+      background-color: #fff;
+      box-shadow: 0 1px 6px rgba(21, 21, 26, 0.28);
+      border-radius: 8px;
+      padding: 15px;
+      .dt-content-left {
+        width: 50%;
+        border-right: 1px solid #ddd;
+        padding: 0 20px 0 0 !important;
+      }
+      .dt-content-right {
+        padding: 10px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        .doctor-schedule {
+          .doctor-schedule-container {
+            border-right: unset !important;
+          }
+        }
+        .doctor-extraInfo {
+          border-top: 1px solid #ddd;
+          margin-top: 10px;
+          padding-top: 10px;
+          .doctor-extra-info-container {
+            padding-left: 0 !important;
+          }
+        }
+      }
+    }
+  }
+  .info-clinic {
+    border-bottom: 2px solid #ddd;
+    padding: 10px 10px;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    .image-clinic {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 180px;
+      height: 100px;
+      border: 1px solid #ddd;
+    }
+    .clinic-name-address {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .name-clinic {
+        font-size: 22px;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .address-clinic {
+        font-size: 16px;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        .fas {
+          color: lightskyblue;
+          font-size: 17px;
+        }
+      }
+    }
+  }
+  .des-clinic {
+    padding: 5px 15px;
+  }
 }
